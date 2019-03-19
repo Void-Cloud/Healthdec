@@ -1,0 +1,151 @@
+html { 
+    height: 100%;
+    width: 100%;
+}
+body {
+    background-image: url(taustakuva2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+::-moz-selection { 
+    background: #b9b9b973; color: #fff; text-shadow: none;
+}
+::selection { 
+    background: #b9b9b973; color: #fff; text-shadow: none;
+}
+form {
+    background: #3738386e;
+    border: 1px solid #42464b;
+    border-radius: 6px;
+    height: auto;
+    width: 298px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin: -200px 0 0 -130px;
+    padding-bottom: 30px;
+}
+input[type="password"], input[type="text"] {
+    border: 1px solid #a1a3a3;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #42464b;
+    height: 39px;
+    margin: 31px 0 0 29px;
+    padding-left: 12px;
+    transition: box-shadow 0.3s;
+    width: 240px;
+}
+input[type="password"]:focus, input[type="text"]:focus {
+    box-shadow: 0 0 1px 1px #bdbdbd;
+    outline: 0;
+}
+.forgot {
+    color: #bdbdbd;
+    display: inline-block;
+    float: right;
+    font: 12px/1 sans-serif;
+    right: 32px;
+    position: relative;
+    text-decoration: none;
+    top: 5px;
+    margin-top: 4px;
+}
+.register {
+    color: #bdbdbd;
+    display: inline-block;
+    float: right;
+    font: 12px/1 sans-serif;
+    right: 32px;
+    position: relative;
+    text-decoration: none;
+    top: 10px;
+    margin-top: 4px;
+}
+.forgot:hover, .register:hover {
+    color: #fff;
+}
+input[type="submit"] {
+    width:240px;
+    height:35px;
+    display:block;
+    font-family:Arial, "Helvetica", sans-serif;
+    font-size:16px;
+    font-weight:bold;
+    color:#fff;
+    text-decoration:none;
+    text-transform:uppercase;
+    text-align:center;
+    text-shadow:1px 1px 0px #37a69b;
+    padding-top:6px;
+    padding-bottom: 3px;
+    margin: 36px 0 0 29px;
+    position:relative;
+    cursor: pointer;
+    border: none;  
+    background-color: #599acf;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius:5px;
+    box-shadow: inset 0px 0px 0px #74a2c9, 0px 5px 0px 0px #4282b6;
+}  
+input[type="submit"]:active{
+    top:3px;
+}
+input {
+    margin-bottom:3px;
+    padding:10px;
+    width: 100%;
+    border:1px solid #CCC
+  }
+  button {
+    padding:10px
+  }
+  label {
+    cursor:pointer
+  }
+  #form-switch {
+    display:none
+  }
+  #register-form {
+    display:none
+  }
+  #form-switch:checked~#register-form {
+    display:block;
+  }
+  #form-switch:checked~#login-form {
+    display:none
+    
+  }
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #27272756;
+  color: #aaaaaa5d;
+  text-align: center;
+}
+/* Alert */
+.alert {
+  box-sizing: border-box;
+  padding: 16px;
+  width: 100%;
+  background-color: #599acf;
+  color: #fff;
+  margin: auto;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius:5px;
+}
+.closebtn {
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #bdbdbd;
+}
+.closebtn:hover {
+  color: #FFF;
+}
