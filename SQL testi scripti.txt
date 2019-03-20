@@ -1,0 +1,68 @@
+CREATE TABLE Weight
+(
+  Time_stamp INT NOT NULL,
+  WeightId INT NOT NULL,
+  Weightvalue INT NOT NULL,
+  PRIMARY KEY (WeightId)
+);
+
+CREATE TABLE Height
+(
+  Timestamp INT NOT NULL,
+  HeightId INT NOT NULL,
+  Heightvalue INT NOT NULL,
+  PRIMARY KEY (HeightId)
+);
+
+CREATE TABLE Blood_glucose_level
+(
+  Timestamp INT NOT NULL,
+  BloodGlucoseLevelId INT NOT NULL,
+  BloodGlucoseLevelvalue INT NOT NULL,
+  PRIMARY KEY (BloodGlucoseLevelId)
+);
+
+CREATE TABLE Blood_pressure
+(
+  Timestamp INT NOT NULL,
+  BloodPressureId INT NOT NULL,
+  BloodPressurevalue INT NOT NULL,
+  PRIMARY KEY (BloodPressureId)
+);
+
+CREATE TABLE User
+(
+  Email VARCHAR(30) NOT NULL,
+  Password VARCHAR(30) NOT NULL,
+  UserId INT NOT NULL,
+  HeightId INT NOT NULL,
+  PRIMARY KEY (UserId),
+  FOREIGN KEY (HeightId) REFERENCES Height(HeightId)
+);
+
+CREATE TABLE Input_W
+(
+  UserId INT NOT NULL,
+  WeightId INT NOT NULL,
+  PRIMARY KEY (UserId, WeightId),
+  FOREIGN KEY (UserId) REFERENCES User(UserId),
+  FOREIGN KEY (WeightId) REFERENCES Weight(WeightId)
+);
+
+CREATE TABLE Input_BG
+(
+  UserId INT NOT NULL,
+  BloodGlucoseLevelId INT NOT NULL,
+  PRIMARY KEY (UserId, BloodGlucoseLevelId),
+  FOREIGN KEY (UserId) REFERENCES User(UserId),
+  FOREIGN KEY (BloodGlucoseLevelId) REFERENCES Blood_glucose_level(BloodGlucoseLevelId)
+);
+
+CREATE TABLE Input_BP
+(
+  UserId INT NOT NULL,
+  BloodPressureId INT NOT NULL,
+  PRIMARY KEY (UserId, BloodPressureId),
+  FOREIGN KEY (UserId) REFERENCES User(UserId),
+  FOREIGN KEY (BloodPressureId) REFERENCES Blood_pressure(BloodPressureId)
+);
