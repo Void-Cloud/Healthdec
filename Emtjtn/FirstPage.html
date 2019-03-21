@@ -21,10 +21,32 @@
 </div>
   
   <!-- Header -->
-  <div class="header">
-    <h1>Healthdec</h1>
-    <p>Taattua<b> laatua</b> :D</p>
-  </div>
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="cycle1.jpg" style="width:100%">
+        <div class="text">test1</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="cycle2.jpg" style="width:100%">
+        <div class="text">test2</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="cycle3.jpg" style="width:100%">
+        <div class="text">test3</div>
+      </div>
+      
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      
+    </div>
+
+  
   
   <!-- Navigation Bar -->
   <div class="navbar">
@@ -67,7 +89,35 @@
     <p>© 2019 Healthdeck</p>
 </div>
   
-  </body>
-  </html>
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+</script>
+  
+
 </body>
 </html>
