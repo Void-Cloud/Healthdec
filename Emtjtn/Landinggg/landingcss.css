@@ -9,7 +9,7 @@ html {
     height: 100%;
 }
 body {
-    background-image: url(testingpic.jpeg);
+    background-image: url(taustakuva2edit.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -37,7 +37,7 @@ nav {
     width: 95%;
     height: 7rem;
     line-height: 7rem;
-    position: fixed;
+    position: relative; /* CHANGE TO FIXED FOR MOVING NAV BAR */
     top: 2rem;
     left: 50%;
     font-size: 1.4rem;
@@ -76,7 +76,7 @@ nav ul li a:hover {
     display: block;
     text-align: center;
     color:white;
-    font-size:60pt;
+    font-size:16vh;
     animation: moveLeft 1s ease-in;
 }
 .title2{
@@ -84,7 +84,7 @@ nav ul li a:hover {
     margin-top:1.2vh;
     text-align: center;
     color:white;
-    font-size:14pt;
+    font-size:3.8vh;
     font-family:serif;
     animation: moveLeft 1s ease-in;
 }
@@ -161,14 +161,14 @@ nav ul li a:hover {
         transform: translate(0);
     }
 }
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 700px) { NOT USED ANYMORE! 
     nav ul {   
       width: 100%;
     }
     .logo-box img {
         display: none;
     }
-}
+} */
 @media screen and (max-width: 1100px) {
     .page p {   
         padding-right: 5rem;
