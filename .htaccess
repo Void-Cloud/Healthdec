@@ -7,7 +7,4 @@ Order Allow,Deny
 Deny from all
 </FilesMatch>
 
-<Directorymatch "^/.*/\.git/">
-Order deny,allow
-Deny from all
-</Directorymatch>
+RedirectMatch 404 /\.git
