@@ -7,6 +7,13 @@
  
 <meta charset="utf-8"/>
 <link rel="stylesheet" href="landingcss.css">
+
+<!-- FONTS AND FOOTER STYLE  -->
+<link rel="stylesheet" href="footer-distributed-with-address-and-phones.css">	
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+
 <title>Healthdec</title>
 </head>
     <body>
@@ -18,11 +25,11 @@
                 <div class="logo-box">
                     <img src="Logo1.png" alt="LOGO">
                 </div>
-                <ul>
+                <!-- <ul>
                     <li><a href="#">AAAAA</a></li>
                     <li><a href="#">BBBBB</a></li>
                     <li><a href="#">CCCCC</a></li>
-                </ul>
+                </ul> -->
             </nav>
             </header>
 
@@ -30,9 +37,91 @@
             <div class="heading">
                 <span class="title1">Healthdec</span>
                 <span class="title2">Insert slogan here</span>
-                <button class="register">
-                    JOIN NOW
-                </button>
+
+                <div class="parent">
+                <button onclick="document.getElementById('id01').style.display='inline-block'" style="width:auto;">Login</button>
+                <button onclick="document.getElementById('id02').style.display='inline-block'" style="width:auto;">Register</button>
+                </div>
+                <div id="id01" class="modal">
+                
+                    <form class="modal-content animate" action="/action_page.php">
+                        <div class="imgcontainer">
+                            <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                                title="Close Modal">&times;</span>
+                            <img src="logo1.png" alt="Healtdec" class="logo">
+                        </div>
+                
+                        <div class="container">
+                            <label for="email"><b>Email</b></label>
+                            <input type="text" placeholder="Enter email address" name="email" required>
+                
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+                
+                            <button type="submit">Login</button>
+                            <label>
+                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                            </label>
+                        </div>
+                
+                        <div class="container" style="background-color:#f1f1f1">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                class="cancelbtn">Cancel</button>
+                            <span class="psw">Forgot <a href="#">password?</a></span>
+                        </div>
+                    </form>
+                </div>
+                
+                <div id="id02" class="modal">
+                
+                    <form class="modal-content animate" action="/action_page.php">
+                        <div class="imgcontainer">
+                            <span onclick="document.getElementById('id02').style.display='none'" class="close"
+                                title="Close Modal">&times;</span>
+                            <img src="logo1.png" alt="Healtdec" class="logo">
+                        </div>
+                
+                        <div class="container">
+                            <label for="email"><b>Email</b></label>
+                            <input type="text" placeholder="Enter email address" name="email" required>
+                
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+                
+                            <label for="psw2"><b>Re-enter password</b></label>
+                            <input type="password" placeholder="Enter Password again" name="psw2" required>
+                
+                            <button type="submit">Register</button>
+                            <label>
+                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                            </label>
+                        </div>
+                
+                        <div class="container" style="background-color:#f1f1f1">
+                            <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                                class="cancelbtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('id01');
+                    var modal2 = document.getElementById('id02');
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function (event) {
+                        console.log(event)
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                        if (event.target == modal2) {
+                            modal2.style.display = "none";
+                        }
+                    }
+
+
+                </script>
             </div>
 
             
@@ -51,6 +140,55 @@
 
                 </div>     
         </div>
+
+        <footer class="footer-distributed">
+
+			<div class="footer-left">
+
+				<h3>Healthdec</h3>
+
+
+				<p class="footer-company-name">Healthdec &copy; 2019</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>28 Metropöliätie</span> Helsinki, Finland</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+123 123123123</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="#">healthdec@examplemail.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>About the company</span>
+					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+				</p>
+
+				<div class="footer-icons">
+
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					
+					<a href="#"><i class="fa fa-github"></i></a>
+
+				</div>
+
+			</div>
+
+		</footer>
 
     </body>
 </html>
