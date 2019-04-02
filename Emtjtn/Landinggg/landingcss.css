@@ -81,7 +81,7 @@ nav ul li a:hover {
 }
 .title2{
     display:block;
-    margin-top:15px;
+    margin-top:1.2vh;
     text-align: center;
     color:white;
     font-size:14pt;
@@ -154,7 +154,7 @@ nav ul li a:hover {
 @keyframes moveUp {
     0%{
         opacity: 0;
-        transform: translateY(2rem);
+        transform: translateY(3.5vh);
     }
     100%{
         opacity:1;
@@ -175,11 +175,11 @@ nav ul li a:hover {
         padding-left: 5rem;
       }
 }
-@media screen and (max-height: 600px) {
+/* @media screen and (max-height: 600px) {
     .page p {
         font-size: 5px;
     }
-}
+} EDIT LATER FOR MOBILE SCREENS */
 /* @media screen and (max-width: 1100px) { REALLY BAD WAY TO DO THIS AND LEADS TO MORE PROBLEMS
 @media screen and (max-height: 900px) {
     .page {   
@@ -209,7 +209,7 @@ input[type=text], input[type=password], input[type=email] {
 }
 
 /* Set a style for all buttons */
-button {
+.container button {
   background-color: rgb(126, 101, 109);
   color: white;
   padding: 14px 20px;
@@ -222,8 +222,26 @@ button {
   
 }
 
-button:hover {
+.container button:hover {
   opacity: 0.8;
+}
+.parent button { /* THESE ARE THE LOGIN AND REGISTER BUTTONS ON FRONTPAGE */
+  background-color: #77A6F7;
+  color: white;
+  padding: 2.5vh 2.5vh;
+  margin: 7.5vh 0.3vh;
+  font-size: 2.8vh;
+  border: 0.2vh solid #fff;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 6px;
+  display: inline-block;
+  animation: moveUp 1s ease;  
+}
+
+.parent button:hover {
+  background-color: #D3E3FC;
+  opacity: 0.85;
 }
 
 /* Extra styles for the cancel button */
