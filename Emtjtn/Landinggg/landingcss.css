@@ -130,7 +130,7 @@ nav ul li a:hover {
 .page h1 {
     font-size: 46px;
     text-align: center;
-    padding-top: 6rem;
+    padding-top: 5rem;
     padding-bottom: 3rem;
     font-family: ;
 }
@@ -175,6 +175,11 @@ nav ul li a:hover {
         padding-left: 5rem;
       }
 }
+@media screen and (max-width: 860px) {
+  .page p {   
+      padding-bottom: 5rem;
+    }
+}
 /* @media screen and (max-height: 600px) {
     .page p {
         font-size: 5px;
@@ -207,10 +212,23 @@ input[type=text], input[type=password], input[type=email] {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
-
+label[for=email], label[for=psw], label[for=psw2] {
+  font-size: 1.4rem;
+}
+input[type=checkbox] {
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  padding: 10px;
+}
+.remembertext {
+  padding-left: 5px;
+  font-size: 16px;
+}
 /* Set a style for all buttons */
 .container button {
-  background-color: rgb(126, 101, 109);
+  background-color: #77A6F7;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -248,7 +266,7 @@ input[type=text], input[type=password], input[type=email] {
 .cancelbtn {
   width: auto;
   padding: 10px 18px;
-  background-color: #ffaca6;
+  background-color: #FFCCBC;
 }
 
 /* Center the image and position the close button */
