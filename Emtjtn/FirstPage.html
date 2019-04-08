@@ -4,13 +4,14 @@
  
 <meta charset="utf-8"/>
 <link rel="stylesheet" href="firstpagecss.css">
+<link rel="stylesheet" href="footer-distributed-with-address-and-phones.css">
 <title>First Page</title>
 
 </head>
 <body>
 
 <!-- Note -->
-<div class="palkki" style="background:#EAE7DC;padding:5px">
+<div class="palkki" style="padding:5px">
   <a href="#" class="logo">logo</a>
   <div class="ylapalkki">
     <a href="#home">Home</a>
@@ -19,34 +20,7 @@
     
   </div> 
 </div>
-  
-  <!-- Header -->
-    <div class="slideshow-container">
 
-      <div class="mySlides fade">
-        <div class="numbertext"></div>
-        <img src="cycle1.jpg" style="width:100%">
-        <div class="text">test1</div>
-      </div>
-      
-      <div class="mySlides fade">
-        <div class="numbertext"></div>
-        <img src="cycle2.jpg" style="width:100%">
-        <div class="text">test2</div>
-      </div>
-      
-      <div class="mySlides fade">
-        <div class="numbertext"></div>
-        <img src="cycle3.jpg" style="width:100%">
-        <div class="text">test3</div>
-      </div>
-      
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      
-    </div>
-
-  
   
   <!-- Navigation Bar -->
   <div class="navbar">
@@ -86,38 +60,54 @@
   </div>
   
   <!-- Footer -->
-<div class="footer">
-    <p>© 2019 Healthdec</p>
-</div>
-  
-<script>
-  var slideIndex = 1;
-  showSlides(slideIndex);
-  
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-  
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-  
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
-  }
-</script>
+  <footer class="footer-distributed">
+
+    <div class="footer-left">
+
+      <h3>Healthdec</h3>
+
+
+      <p class="footer-company-name">Healthdec &copy; 2019</p>
+    </div>
+
+    <div class="footer-center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>28 Metropöliätie</span> Helsinki, Finland</p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+123 123123123</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="#">healthdec@examplemail.com</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-company-about">
+        <span>About the company</span>
+        Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+      </p>
+
+      <div class="footer-icons">
+
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        
+        <a href="#"><i class="fa fa-github"></i></a>
+
+      </div>
+
+    </div>
+
+  </footer>
   
 
 </body>
