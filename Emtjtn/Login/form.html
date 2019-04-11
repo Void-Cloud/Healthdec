@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="form.css">
+<title>Forms</title>
+
+</head>
+<body>
+
+<button class="open-button" onclick="openForm1()"><i class="fas fa-user"> Profile</i></button>
+
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Edit profile</h1>
+
+    <button class="button" onclick="openForm2()">Change email</button>
+
+    <button class="button" onclick="openForm3()">Change password</button>
+
+    <button class="button" onclick="openForm4()">Add height</button>
+
+    <button type="button" class="btn cancel" onclick="closeForm1()">Close</button>
+  </form>
+</div>
+
+<div class="form-popup" id="changeEmail">
+        <form action="/action_page.php" class="form-container">
+          <h1>Change email</h1>
+      
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+
+          <label for="email"><b>Re-enter email</b></label>
+          <input type="text" placeholder="Re-enter email" name="email" required>
+      
+          <button type="submit" class="btn">Save</button>
+          <button type="button" class="btn cancel" onclick="closeForm2()">Close</button>
+        </form>
+      </div>
+
+      <div class="form-popup" id="changePsw">
+            <form action="/action_page.php" class="form-container">
+              <h1>Change password</h1>
+          
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+
+              <label for="psw"><b>Re-enter password</b></label>
+              <input type="password" placeholder="Re-enter password" name="psw" required>
+          
+              <button type="submit" class="btn">Save</button>
+              <button type="button" class="btn cancel" onclick="closeForm3()">Close</button>
+            </form>
+          </div>
+
+          <div class="form-popup" id="addHeight">
+                <form action="/action_page.php" class="form-container">
+                  <h1>Add height</h1>
+              
+                  <label for="height"><b>Height</b></label>
+                  <input type="height" placeholder="Enter Height" name="height" required>
+              
+                  <button type="submit" class="btn">Save</button>
+                  <button type="button" class="btn cancel" onclick="closeForm4()">Close</button>
+                </form>
+              </div>
+
+        <div class="form-user" id="userInput">
+
+        <form action="/action_page.php" class="user-container">
+
+        <label for="theDate"><b>Date</b></label>
+        <input type="date" id="theDate">
+
+        <label for="weight"><b>Weight</b></label>
+        <input type="number" id="weight" placeholder="kg">
+
+        <label for="bsugar"><b>Blood sugar</b></label>
+        <input type="number" id="bsugar" placeholder="mmol/L">
+
+        <label for="systolic"><b>Systolic pressure</b></label>
+        <input type="number" id="systolic" placeholder="highest pressure">
+
+        <label for="diastolic"><b>Diastolic pressure</b></label>
+        <input type="number" id="diastolic" placeholder="lowest pressure">
+
+        <button type="submit" class="btn">Save</button>
+
+        </form>
+</div>
+
+<script>
+function openForm1() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm1() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+function openForm2() {
+  document.getElementById("changeEmail").style.display = "block";
+  document.getElementById("myForm").style.display = "none";
+
+}
+
+function closeForm2() {
+  document.getElementById("changeEmail").style.display = "none";
+}
+
+function openForm3() {
+  document.getElementById("changePsw").style.display = "block";
+  document.getElementById("myForm").style.display = "none";
+
+}
+
+function closeForm3() {
+  document.getElementById("changePsw").style.display = "none";
+}
+
+function openForm4() {
+  document.getElementById("addHeight").style.display = "block";
+  document.getElementById("myForm").style.display = "none";
+
+}
+
+function closeForm4() {
+  document.getElementById("addHeight").style.display = "none";
+}
+
+var date = new Date();
+var day = date.getDate();
+var month = date.getMonth() + 1;
+var year = date.getFullYear();
+
+if (month < 10) month = "0" + month;
+if (day < 10) day = "0" + day;
+var today = year + "-" + month + "-" + day;
+
+document.getElementById('theDate').value = today;
+
+</script>
+
+</body>
+</html>
