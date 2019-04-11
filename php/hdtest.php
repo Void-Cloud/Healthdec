@@ -1,7 +1,7 @@
 <?php
     require_once('HTTPS.php');
 ?>
-<form action="/~juhook/mysql/hdtest.php" method="post">
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     E-mail:<br>
     <input type="text" name="user">
     <br>
@@ -26,7 +26,7 @@
         echo "passwords didn't match";
     }
     else{
-        $config = parse_ini_file("../../env.ini");
+        $config = parse_ini_file("../../../env.ini");
 
         $connection = mysqli_connect($config["dbaddr"], $config["username"], $config["password"], $config["dbname"]);
 
