@@ -9,7 +9,9 @@
     elseif($pass1 != $pass2){
         echo "passwords didn't match";
     }
-    //elseif($pass1)
+    elseif(preg_match("/[A-Z]/", $pass1)===0 || preg_match("/[0-9]/", $pass1)===0 || strlen($pass1) < 4 || strlen($pass) > 30){
+        echo "Password must contain a number, an uppercase letter and must be between 4-30 characters long.";
+    }
     else{
         $config = parse_ini_file("../../../env.ini");
 
@@ -35,7 +37,7 @@
         }
         $res = $res->fetch_all();
         if($res[0][1] == $email){
-            echo "Email is already registerd";
+            echo "Email is already registered";
         }
         else{
 

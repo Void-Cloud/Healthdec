@@ -3,10 +3,7 @@
     session_start([
         'read_and_close'  => true,
     ]);
-    if($_SESSION['name'] == ""){
-        session_destroy();
-    }
-    else{
+    if(!($_SESSION['name'] == "")){
         header("Location: account.php");
     }
 ?>
