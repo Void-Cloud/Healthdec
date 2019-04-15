@@ -9,6 +9,7 @@
     elseif($pass1 != $pass2){
         echo "passwords didn't match";
     }
+    //elseif($pass1)
     else{
         $config = parse_ini_file("../../../env.ini");
 

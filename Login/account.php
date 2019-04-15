@@ -1,7 +1,9 @@
 <?php
     require_once('HTTPS.php');
 
-    session_start();
+    session_start([
+        'read_and_close'  => true,
+    ]);
     if($_SESSION['name'] == ""){
         session_destroy();
         header("Location: landing.php");

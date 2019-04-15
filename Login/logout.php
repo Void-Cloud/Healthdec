@@ -2,9 +2,6 @@
     require_once('HTTPS.php');
 
     session_start();
-    echo $_SESSION['name'];
-    echo $_SESSION['id'];
-    echo $_SESSION['height'];
 
     $_SESSION = array();
 
@@ -17,8 +14,7 @@
     }
 
     session_destroy();
-    echo $_SESSION['name'];
-    echo $_SESSION['id'];
-    echo $_SESSION['height'];
+
+    header("location: landing.php")
 
 ?>
