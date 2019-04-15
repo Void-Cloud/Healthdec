@@ -166,7 +166,7 @@
                             }).then(function (text) {
                                 document.getElementById("error").innerHTML = (text);
                                 if((text) == "Success!"){
-                                    window.location.href = "logout.php";
+                                    window.location.href = "account.php";
                                 }
                             }).catch(function (error) {
                                 console.error(error);
