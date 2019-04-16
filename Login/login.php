@@ -2,6 +2,7 @@
     $email = htmlentities($_POST["email"]);
     $pass = htmlentities($_POST["psw"]);
 
+
     if(empty($email) || empty($pass)){
         echo "please fill the form entirely";
     }
@@ -32,7 +33,17 @@
         if($res[0][1] == $email){
             if(password_verify($pass, $res[0][0])){
                 
-                session_start();
+                if(empty($_POST["remember"])){
+                    session_start([
+                        'cookie_lifetime' => 86400
+                    ]); 
+                }
+                else{
+                    session_start([
+                        'cookie_lifetime' => 31104000
+                    ]); 
+                }
+
                 $_SESSION['name'] = $email;
                 $_SESSION['id'] = $res[0][2];
                 $_SESSION['height'] = $res[0][3];

@@ -1,5 +1,11 @@
 <?php
     require_once('HTTPS.php');
+    session_start([
+        'read_and_close'  => true,
+    ]);
+    if(!($_SESSION['name'] == "")){
+        header("Location: account.php");
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -60,11 +66,11 @@
                 
                             <label for="psw"><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" name="psw" required>
-                            <p id="error"></p>
+                            <p id="error" style="font-size: 16px; color:red"></p>
                             <button type="submit">Login</button>
                             <label>
                                 <input type="checkbox" checked="checked" name="remember">
-                                <span class="remembertext">Remember me</span>
+                                <span class="remembertext">Keep me logged in</span>
                             </label>
                         </div>
                 
@@ -100,7 +106,7 @@
                 
                             <label for="psw2"><b>Re-enter password</b></label>
                             <input type="password" placeholder="Enter Password again" name="psw2" required>
-                            <p id="regerror"></p>
+                            <p id="regerror" style="font-size: 16px; color:red"></p>
                             <button type="submit">Register</button>
                         </div>
                 
@@ -166,7 +172,7 @@
                             }).then(function (text) {
                                 document.getElementById("error").innerHTML = (text);
                                 if((text) == "Success!"){
-                                    window.location.href = "logout.php";
+                                    window.location.href = "account.php";
                                 }
                             }).catch(function (error) {
                                 console.error(error);
