@@ -1,7 +1,7 @@
 <?php
     require_once('HTTPS.php');
 ?>
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+<form action="<? echo $_SERVER['PHP_SELF']; ?>" method="post">
     E-mail:<br>
     <input type="text" name="user">
     <br>
@@ -48,7 +48,10 @@
                 $_SESSION['id'] = $res[0][2];
                 $_SESSION['height'] = $res[0][3];
 
-                header("Location: logged.php");
+                $stmt->close();
+                $connectiom->close();
+
+                header("Location: account.php");
             }
             else{
                 echo "Email or password is incorrect";
@@ -58,5 +61,7 @@
         else{
             echo "Email or password is incorrect";
         }
+        $stmt->close();
+        $connectiom->close();
     }
 ?>
