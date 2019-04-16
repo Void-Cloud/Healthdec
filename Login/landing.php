@@ -45,7 +45,7 @@
         <div id="first" class="page"></div>
             <div class="heading">
                 <span class="title1">Healthdec</span>
-                <span class="title2">Insert slogan here@@@</span>
+                <span class="title2">Step into the Healthdec</span>
 
                 <div class="parent">
                 <button onclick="document.getElementById('id01').style.display='inline-block'" style="width:16vh;">Login</button>
@@ -100,8 +100,9 @@
                         <div class="container">
                             <label for="email"><b>Email</b></label>
                             <input type="text" placeholder="Enter email address" name="email" required>
-                
+
                             <label for="psw"><b>Password</b></label>
+                            <p  style="font-size: 16px">Password must contain a number, an uppercase letter and must be between 4-30 characters long.</p>
                             <input type="password" placeholder="Enter Password" name="psw" required>
                 
                             <label for="psw2"><b>Re-enter password</b></label>
@@ -198,6 +199,7 @@
                                     modal.style.display = "inline-block";
                                     modal2.style.display = "none";
                                     modal3.style.display = "none";
+                                    alert("Registeration successful, please login.");
                                 }
                             }).catch(function (error) {
                                 console.error(error);
@@ -215,12 +217,17 @@
 
                 <div class="secondone">
                     <h1>About Healthdec</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet metus id congue facilisis. Nulla facilisi. Donec eget risus ut lectus convallis aliquet a et purus. Nulla maximus rhoncus velit, vitae iaculis sem sollicitudin ut. Quisque neque leo, luctus non ultricies in, cursus nec ipsum. Nulla magna nibh, lobortis sit amet egestas quis, tincidunt in tellus. Phasellus aliquet, sapien nec cursus scelerisque, turpis felis accumsan odio, sit amet tempus velit enim eu nulla. Sed vel euismod augue, in viverra mi. Morbi eu laoreet leo. In tempor nulla arcu, sit amet imperdiet nisi maximus finibus. Nullam gravida sagittis quam, a laoreet dui volutpat et.</p>
+                    <p>This is our web development project for Metropolia University of Applied Sciences.</p>
                 </div>
 
                 <div class="secondtwo">
-                    <h1>No en kyllä tiedä</h1>
-                    <p>Vestibulum dictum, erat ut condimentum varius, eros nisi gravida ligula, et rutrum purus eros ut dui. Proin facilisis a erat sit amet finibus. Duis sed maximus libero, in imperdiet elit. Phasellus lobortis justo a ornare laoreet. Etiam ut lacus vel dolor luctus facilisis. Maecenas sagittis ornare auctor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam non eros sit amet odio facilisis fermentum. Nullam laoreet urna a sapien viverra mattis.</p>
+                    <h1>Meet the team</h1>
+                    <ul id="teamlist">
+                        <li>Valtteri</li>
+                        <li>Suvi</li>
+                        <li>Oliver</li>
+                        <li>Juho</li>
+                    </ul>
 
                 </div>     
         </div>

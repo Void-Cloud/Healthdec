@@ -118,6 +118,7 @@ nav ul li a:hover {
     height: 50%; 
     min-height: 50vh;
     margin: auto;
+    text-align: center;
     
 }
 .secondtwo {
@@ -374,3 +375,7 @@ span.psw {
     justify-content: center;
     align-items: center;
   }
+#teamlist{
+  text-align: center;
+  font-size: 26px;
+}
