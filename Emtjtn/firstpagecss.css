@@ -27,7 +27,7 @@
   }
   .palkki {
     overflow: hidden;
-    background-color: #303336;
+    background-color: #30333691;
     padding: 20px 10px;
     color: aqua;
   }
@@ -55,15 +55,7 @@
     background-color: #D3E3FC;
     color: black;
   }
-  /* Style the top navigation bar */
-  .navbar {
-    display: flex;
-    background-color: #77A6F7;
-    color: rgba(0, 0, 0, 0);
-    font-size: 16px;
-    padding: 12px 18px;
-    box-shadow: 4px 4px 2px grey;
-  }
+
   
   /* Column container */
   .row {  
