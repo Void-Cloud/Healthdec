@@ -12,7 +12,82 @@
   body {
     font-family: Arial;
   }
-  
+  .uppersection h1{
+    font-size: 64px;
+    padding: 160px 0px 90px 0px;
+    text-align: center;
+  }
+  .upperlist {
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+  }
+  .uppersection h1 {
+    color: rgb(65, 65, 65);
+  }
+  .upperlist a {
+    color: rgb(65, 65, 65);
+    margin: 16px;
+    padding: 16px;
+    border-bottom: 2px solid rgb(141, 141, 141);
+    text-decoration: none;
+    text-align: center;
+    
+  }
+  @keyframes bg { /* Animation for links */
+    0% {
+        background-size:    0 2px,
+                            2px 0,
+                            0 2px,
+                            2px 0;
+    }
+    25% {
+        background-size:    0 2px,    /* Start from bottom left corner */
+                            2px 0,
+                            0 2px,
+                            2px 100%;
+    }
+    50% {
+        background-size:    100% 2px,
+                            2px 0,
+                            0 2px,
+                            2px 100%;
+    }
+    75% {
+        background-size:    100% 2px,
+                            2px 100%,
+                            0 2px,
+                            2px 100%;
+    }
+    100% {
+        background-size:    100% 2px,
+                            2px 100%,
+                            100% 2px,
+                            2px 100%;
+    }
+}
+  .upperlist a:hover {
+    transform: translateY(-2px);
+  }
+  .upperlist a:hover {
+    background-repeat: no-repeat;
+    background-image:   linear-gradient(to right, rgb(65, 65, 65) 100%, rgb(65, 65, 65) 100%),
+                        linear-gradient(to bottom, rgb(65, 65, 65) 100%, rgb(65, 65, 65) 100%),
+                        linear-gradient(to right, rgb(65, 65, 65) 100%, rgb(65, 65, 65) 100%),
+                        linear-gradient(to bottom, rgb(65, 65, 65) 100%, rgb(65, 65, 65) 100%);
+    background-size:    100% 2px,
+                        2px 100%,
+                        0 2px,
+                        2px 100%;
+    background-position:    0 0,
+                            100% 0,
+                            0% 0%,
+                            0 100%;
+    animation: bg 0.65s cubic-bezier(0.4, 0.4, 0.4, 0.4) 1;
+  }
+
   /* Header/logo Title */
   .header {
     /* background: url(kuva1.jpg);
@@ -71,13 +146,14 @@
     flex: 50%;
     background-color: white;
     padding-right: 8vh;
-    padding-left: 14vh;
+    padding-left: 18vh;
+    padding-bottom: 200px;
   }
   .mainright {
     flex: 50%;
     background-color: white;
     padding-left: 8vh;
-    padding-right: 14vh;
+    padding-right: 18vh;
     padding-top: 24vh;
     padding-bottom: 14vh;
   }
@@ -105,7 +181,7 @@
     background-color: #77A6F7;
     color: white;
     padding: 14px 20px;
-    margin: 3vh 0;
+    margin: 6.5vh 0;
     border: none;
     cursor: pointer;
     width: auto;
@@ -120,7 +196,7 @@
   }
   .mainleft h2, .mainright h2 {
     font-size: 4vh;
-    padding-top: 14vh;
+    padding-top: 24vh;
   }
   .mainleft h5, .mainright h5 {
     font-size: 2.2vh;
@@ -135,7 +211,7 @@
   nav {
     font-family: monospace;
     position: absolute;
-    left: 5%;
+    left: 9.3%;
     padding-top: 6vh;
   }
   
@@ -196,7 +272,6 @@
   }
   /* dropdown end */
 
-  /* SAME PAGE FORMS */
 section {
     display: none;
 }
@@ -204,7 +279,25 @@ section:first-of-type {
     display: block;
 }
 
-/* SAME PAGE FORMS END */
+#myBtn {          /* Scroll button */
+  display: none;
+  position: fixed;
+  bottom: 2vh;
+  right: 4vh;
+  z-index: 99;
+  font-size: 3.2vh;
+  border: none;
+  outline: none;
+  background-color: #77A6FC;
+  color: white;
+  cursor: pointer;
+  padding: 10px 12px 10px 12px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #D3E3FC;
+}
   @media (max-width: 880px) {
   
     .footer-distributed{
@@ -225,12 +318,59 @@ section:first-of-type {
     }
   
   }
-  
-  
-  /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 700px) {
-    .row, .navbar {   
-      flex-direction: column;
+  @media screen and (max-width: 1200px) {
+    .mainleft {   
+      padding-left: 8vh;
+      padding-right: 2vh;
+    }
+    .mainright {   
+      padding-left: 2vh;
+      padding-right: 8vh;
     }
   }
-  .mySlides {display: none}
+  @media screen and (max-width: 900px) {
+    .row {   
+      flex-direction: column;
+    }
+    .mainleft, .mainright {
+      padding-left: 4vh;
+      padding-right: 4vh;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .formbloodsugar, .mainleft h2, .mainleft h5 {
+      padding-left: 22%;
+    }
+  }
+
+  /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 540px) {
+    .upperlist {   
+      flex-direction: column;
+      font-size: 20px;
+    }
+    .uppersection h1 {
+      font-size: 42px;
+      padding: 100px 0px 60px 0px;
+    }
+    nav {
+      left: 9.3%;
+      padding-top: 1.2vh;
+    }
+  }
+  @media screen and (max-height: 680px) {
+    #myBtn {   
+      font-size: 20px;
+      padding: 14px;
+    }
+    .mainleft h2, .mainright h2 {
+      font-size: 26px;
+      padding-top: 16rem;
+    }
+    .mainleft h5, .mainright h5, label[for=bloodsugar] {
+      font-size: 18px;
+    }
+}
+
+
