@@ -15,12 +15,12 @@
             die( "Database connection failed :(" );
         }
 
-        if(!($stmt = $connection->prepare("SELECT * from User WHERE Email = (?)"))){
+        if(!($stmt = $connection->prepare("SELECT * from Measure"))){
             echo "Prepare Failed: (" . $mysqli->errno . ") " . $mysqli->error;
         }
-        if (!$stmt->bind_param("s", $email)){
+        /*if (!$stmt->bind_param("s", $email)){
             echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
-        }
+        }*/
 
         if (!$stmt->execute()) {
             echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
@@ -30,35 +30,17 @@
             echo "Getting result set failed: (" . $stmt->errno . ") " . $stmt->error;
         }
         $res = $res->fetch_all();
-        if($res[0][1] == $email){
-            if(password_verify($pass, $res[0][0])){
-                
-                if(empty($_POST["remember"])){
-                    session_start([
-                        'gc_maxlifetime' => 10
-                    ]); 
-                }
-                else{
-                    session_start([
-                        'gc_maxlifetime' => 60
-                    ]); 
-                }
-
-                $_SESSION['name'] = $email;
-                $_SESSION['id'] = $res[0][2];
-                $_SESSION['height'] = $res[0][3];
-
-                echo "Success!";
-            }
-            else{
-                echo "Email or password is incorrect";
-            }
-            
-        }
-        else{
-            echo "Email or password is incorrect";
-        }
+        
+        
         $stmt->close();
         $connection->close();
     }
 ?>
+<p>oh god why</p>
+<? echo "<script>
+
+var myNum = 1;
+
+document.write(myNum);
+
+</script>"?>
