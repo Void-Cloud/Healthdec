@@ -12,35 +12,48 @@
 <link rel="stylesheet" href="footer-distributed-with-address-and-phones.css">	
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 
 <title>Healthdec</title>
 </head>
     <body>
 
-        
+            
             <header class="header">
-
+                
             <nav>
-                <div class="logo-box">
-                    <img src="Logo1.png" alt="LOGO">
-                </div>
-                <!-- <ul>
-                    <li><a href="#">AAAAA</a></li>
-                    <li><a href="#">BBBBB</a></li>
-                    <li><a href="#">CCCCC</a></li>
-                </ul> -->
+                
+                 <ul>
+                    <li><a href="#"><img src="Engflag.jpg" alt="FIN"></a></li>
+                    <li><a href="landingFin.html"><img src="Finflag.png" alt="ENG"></a></li>
+                </ul> 
             </nav>
+            
             </header>
+            <!--<div id="ac-wrapper" style='display:none'>
+                    <div id="popup">
+                        <center>
+                             <h2>This website uses cookies. By continuing you agree to our terms.</h2>
+                
+                            <input type="submit" name="submit" value="Continue" onClick="PopUp('hide')" />
+                        </center>
+                    </div>
+                </div>
+            window.onload = function () {
+                setTimeout(function () {
+                    PopUp('show');
+                }, 2000);
+            }
+            -->
 
         <div id="first" class="page"></div>
             <div class="heading">
                 <span class="title1">Healthdec</span>
-                <span class="title2">Insert slogan here@@@</span>
+                <span class="title2">Step into the Healthdec!</span>
 
                 <div class="parent">
-                <button onclick="document.getElementById('id01').style.display='inline-block'" style="width:16vh;">Login</button>
-                <button onclick="document.getElementById('id02').style.display='inline-block'" style="width:16vh;">Register</button>
+                <button onclick="document.getElementById('id01').style.display='inline-block'" >Login</button>
+                <button onclick="document.getElementById('id02').style.display='inline-block'" >Register</button>
                 </div>
                 <div id="id01" class="modal">
                 
@@ -159,21 +172,32 @@
 
                 <div class="secondone">
                     <h1>About Healthdec</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet metus id congue facilisis. Nulla facilisi. Donec eget risus ut lectus convallis aliquet a et purus. Nulla maximus rhoncus velit, vitae iaculis sem sollicitudin ut. Quisque neque leo, luctus non ultricies in, cursus nec ipsum. Nulla magna nibh, lobortis sit amet egestas quis, tincidunt in tellus. Phasellus aliquet, sapien nec cursus scelerisque, turpis felis accumsan odio, sit amet tempus velit enim eu nulla. Sed vel euismod augue, in viverra mi. Morbi eu laoreet leo. In tempor nulla arcu, sit amet imperdiet nisi maximus finibus. Nullam gravida sagittis quam, a laoreet dui volutpat et.</p>
+                    <p>Healthdec is a new health app created to track your blood glucose level,
+                        blood pressure and weight. It's easy to use and the application shows your 
+                        stats in easy-to-read plots. After inputting your data, you can also download 
+                        your information as a pdf and sent it to your doctor. We value your privacy and no 
+                        information regarding you will be released without your permission.
+                    </p>
                 </div>
 
                 <div class="secondtwo">
-                    <h1>No en kyllä tiedä</h1>
-                    <p>Vestibulum dictum, erat ut condimentum varius, eros nisi gravida ligula, et rutrum purus eros ut dui. Proin facilisis a erat sit amet finibus. Duis sed maximus libero, in imperdiet elit. Phasellus lobortis justo a ornare laoreet. Etiam ut lacus vel dolor luctus facilisis. Maecenas sagittis ornare auctor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam non eros sit amet odio facilisis fermentum. Nullam laoreet urna a sapien viverra mattis.</p>
+                    <h1>The team behind</h1>s
+                    <p>Our team consists of four students from Metropolia University of Applied Science.
+                        All of us study Information and Communications technology, specializing in health technology 
+                        This app is made for our school project.
+                    </p>
 
                 </div>     
         </div>
 
+        <button onclick="topFunction()" id="myBtn" title="Go to top">⇧</button>
         <footer class="footer-distributed">
 
 			<div class="footer-left">
 
-				<h3>Healthdec</h3>
+				<div class="logo-box">
+                    <img src="Logo1.png" alt="LOGO">
+				</div>
 
 
 				<p class="footer-company-name">Healthdec &copy; 2019</p>
@@ -201,8 +225,8 @@
 			<div class="footer-right">
 
 				<p class="footer-company-about">
-					<span>About the company</span>
-					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+					<span>About the page</span>
+					This webpage has been made as a part of Metropolia University of Applied Sciences course project.
 				</p>
 
 				<div class="footer-icons">
@@ -216,7 +240,32 @@
 
 			</div>
 
-		</footer>
+        </footer>
+        <script>
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+              } else {
+                document.getElementById("myBtn").style.display = "none";
+              }
+            }
+            
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
+            </script>
+            <script>
+            function PopUp(hideOrshow) {
+                if (hideOrshow == 'hide') document.getElementById('ac-wrapper').style.display = "none";
+                else document.getElementById('ac-wrapper').removeAttribute('style');
+            }
+            
+            </script>
 
     </body>
 </html>

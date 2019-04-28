@@ -1,12 +1,3 @@
-<?php
-    require_once('HTTPS.php');
-    session_start([
-        'read_and_close'  => true,
-    ]);
-    if(!($_SESSION['name'] == "")){
-        header("Location: account.php");
-    }
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +6,7 @@
 <head>
  
 <meta charset="utf-8"/>
-<link rel="stylesheet" href="landingcss.css">
+<link rel="stylesheet" href="landingcssFin.css">
 
 <!-- FONTS AND FOOTER STYLE  -->
 <link rel="stylesheet" href="footer-distributed-with-address-and-phones.css">	
@@ -27,33 +18,17 @@
 </head>
     <body>
 
-            
+        
             <header class="header">
-                
+
             <nav>
                 
                  <ul>
-                    <li><a href="#"><img src="Engflag.jpg" alt="FIN"></a></li>
-                    <li><a href="landingFin.html"><img src="Finflag.png" alt="ENG"></a></li>
+                    <li><a href="landing.html"><img src="Engflag.jpg" alt="FIN"></a></li>
+                    <li><a href="#"><img src="Finflag.png" alt="ENG"></a></li>
                 </ul> 
             </nav>
-            
             </header>
-            <!--<div id="ac-wrapper" style='display:none'>
-                    <div id="popup">
-                        <center>
-                             <h2>This website uses cookies. By continuing you agree to our terms.</h2>
-                
-                            <input type="submit" name="submit" value="Continue" onClick="PopUp('hide')" />
-                        </center>
-                    </div>
-                </div>
-            window.onload = function () {
-                setTimeout(function () {
-                    PopUp('show');
-                }, 2000);
-            }
-            -->
 
         <div id="first" class="page"></div>
             <div class="heading">
@@ -61,8 +36,8 @@
                 <span class="title2">Step into the Healthdec!</span>
 
                 <div class="parent">
-                <button onclick="document.getElementById('id01').style.display='inline-block'" >Login</button>
-                <button onclick="document.getElementById('id02').style.display='inline-block'" >Register</button>
+                <button onclick="document.getElementById('id01').style.display='inline-block'" >Kirjaudu</button>
+                <button onclick="document.getElementById('id02').style.display='inline-block'" >Rekisteröidy</button>
                 </div>
                 <div id="id01" class="modal">
                 
@@ -74,26 +49,26 @@
                         </div>
                 
                         <div class="container">
-                            <label for="email"><b>Email</b></label>
-                            <input type="text" placeholder="Enter email address" name="email" required>
+                            <label for="email"><b>Sähköpostiosoite</b></label>
+                            <input type="text" placeholder="Sähköpostiosoite" name="email" required>
                 
                             <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
+                            <input type="password" placeholder="Salasana" name="psw" required>
                 
-                            <button type="submit">Login</button>
+                            <button type="submit">Kirjaudu</button>
                             <label>
                                 <input type="checkbox" checked="checked" name="remember">
-                                <span class="remembertext">Remember me</span>
+                                <span class="remembertext">Muista minut</span>
                             </label>
                         </div>
                 
                         <div class="container">
                             <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                                class="cancelbtn">Cancel</button>
+                                class="cancelbtn">Peruuta</button>
 
 
 
-                                <span class="psw"> Forgot <a href="#" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">password?</a>
+                                <span class="psw"> Unohditko <a href="#" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">salasanan?</a>
               
                                 </span>
 
@@ -111,21 +86,21 @@
                         </div>
                 
                         <div class="container">
-                            <label for="email"><b>Email</b></label>
-                            <input type="text" placeholder="Enter email address" name="email" required>
+                            <label for="email"><b>Sähköpostiosoite</b></label>
+                            <input type="text" placeholder="Anna sähköpostiosoite" name="email" required>
                 
-                            <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
+                            <label for="psw"><b>Salasana</b></label>
+                            <input type="password" placeholder="Salasana" name="psw" required>
                 
-                            <label for="psw2"><b>Re-enter password</b></label>
-                            <input type="password" placeholder="Enter Password again" name="psw2" required>
+                            <label for="psw2"><b>Anna salasana uudelleen</b></label>
+                            <input type="password" placeholder="Anna salasana uudelleen" name="psw2" required>
                 
-                            <button type="submit">Register</button>
+                            <button type="submit">Rekisteröidy</button>
                         </div>
                 
                         <div class="container" style="background-color:rgba(255, 255, 255, 0)">
                             <button type="button" onclick="document.getElementById('id02').style.display='none'"
-                                class="cancelbtn">Cancel</button>
+                                class="cancelbtn">Peruuta</button>
                         </div>
                     </form>
                 </div>
@@ -139,13 +114,13 @@
                       </div>
                   
                       <div class="container">
-                            <label for="email"><b>Email</b></label>
-                            <input type="text" placeholder="Enter email address" name="email" required>
-                        <button type="submit">Send password</button>
+                            <label for="email"><b>Sähköpostiosoite</b></label>
+                            <input type="text" placeholder="Sähköpostiosoite" name="email" required>
+                        <button type="submit">Lähetä salasana</button>
                       </div>
                   
                       <div class="container" style="background-color:#fff">
-                        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+                        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Peruuta</button>
                       </div>
                     </form>
                   </div>
@@ -181,19 +156,19 @@
 
                 <div class="secondone">
                     <h1>About Healthdec</h1>
-                    <p>Healthdec is a new health app created to track your blood glucose level,
-                        blood pressure and weight. It's easy to use and the application shows your 
-                        stats in easy-to-read plots. After inputting your data, you can also download 
-                        your information as a pdf and sent it to your doctor. We value your privacy and no 
-                        information regarding you will be released without your permission.
+                    <p>Healthdec on uusi terveyden seurantaan tarkoitettu sovellus. Sovelluksen 
+                        avulla voi seurata verensokeria, verenpainetta, sekä ruumiinpainoa. 
+                        Sovellus generoi helposti luettavia kuvaajia, joiden avulla käyttäjän 
+                        on helppo seurata omia arvojaan. Tietojen syötön jälkeen käyttäjä voi halutessaan  
+                        kätevästi ladata arvonsa PDF-tiedostona ja lähettää tiedostot vaikka lääkärille. 
+                        Yksityisyytesi on meille tärkeää, emmekä me luovuta tietoja eteenpäin ilman suostumusta.
                     </p>
                 </div>
 
                 <div class="secondtwo">
-                    <h1>The team behind</h1>s
-                    <p>Our team consists of four students from Metropolia University of Applied Science.
-                        All of us study Information and Communications technology, specializing in health technology 
-                        This app is made for our school project.
+                    <h1>Keitä me olemme</h1>
+                    <p>Olemme neljä terveys- ja hyvinvointitekniikan korkeakouluopiskelijaa Metropolian Ammattikorkeakoulusta. 
+                        Sivusto on tehty osana opintojamme.
                     </p>
 
                 </div>     
@@ -216,7 +191,7 @@
 
 				<div>
 					<i class="fa fa-map-marker"></i>
-					<p><span>28 Metropöliätie</span> Helsinki, Finland</p>
+					<p><span>28 Metropöliätie</span> Helsinki, Suomi</p>
 				</div>
 
 				<div>
@@ -234,8 +209,8 @@
 			<div class="footer-right">
 
 				<p class="footer-company-about">
-					<span>About the page</span>
-					This webpage has been made as a part of Metropolia University of Applied Sciences course project.
+					<span>Tietoa sivusta</span>
+					Tämä sivu on tehty osana Metropolian Ammattikorkeakoulun kurssiprojektia.
 				</p>
 
 				<div class="footer-icons">
@@ -267,13 +242,6 @@
               document.body.scrollTop = 0;
               document.documentElement.scrollTop = 0;
             }
-            </script>
-            <script>
-            function PopUp(hideOrshow) {
-                if (hideOrshow == 'hide') document.getElementById('ac-wrapper').style.display = "none";
-                else document.getElementById('ac-wrapper').removeAttribute('style');
-            }
-            
             </script>
 
     </body>
