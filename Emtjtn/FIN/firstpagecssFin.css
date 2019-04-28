@@ -11,6 +11,7 @@
   }
   /* Style the body */
   body {
+
   }
   .uppersection h1{
     font-size: 64px;
@@ -156,6 +157,8 @@
     width: auto;
     border-radius: 10px;
   }
+
+  
   button[type=direction]:nth-child(2) { /* Buttons for switching graph data*/
 
   }
@@ -180,6 +183,7 @@
   }
   
   nav {
+    font-family: monospace;
     position: absolute;
     left: 8.5%;
     padding-top: 6vh;
@@ -208,6 +212,7 @@
   }
   .dropdown li {
     background: rgb(170, 201, 255);
+    width: 100%;
   }
     
   li a {
