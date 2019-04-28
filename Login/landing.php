@@ -66,11 +66,11 @@
                 </div>
                 <div id="id01" class="modal">
                 
-                    <form class="modal-content animate" action="/action_page.php">
+                    <form class="modal-content animate" id="login">
                         <div class="imgcontainer">
                             <span onclick="document.getElementById('id01').style.display='none'" class="close"
                                 title="Close Modal">&times;</span>
-                            <img src="logo1.png" alt="Healtdec" class="logo">
+                            <img src="Logo1.png" alt="Healtdec" class="logo">
                         </div>
                 
                         <div class="container">
@@ -79,11 +79,11 @@
                 
                             <label for="psw"><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" name="psw" required>
-                
+                            <p id="error" style="font-size: 16px; color:red"></p>
                             <button type="submit">Login</button>
                             <label>
                                 <input type="checkbox" checked="checked" name="remember">
-                                <span class="remembertext">Remember me</span>
+                                <span class="remembertext">Keep me logged in</span>
                             </label>
                         </div>
                 
@@ -103,22 +103,17 @@
                 
                 <div id="id02" class="modal">
                 
-                    <form class="modal-content animate" action="/action_page.php">
+                    <form class="modal-content animate" id="register">
                         <div class="imgcontainer">
                             <span onclick="document.getElementById('id02').style.display='none'" class="close"
                                 title="Close Modal">&times;</span>
-                            <img src="logo1.png" alt="Healtdec" class="logo">
+                            <img src="Logo1.png" alt="Healtdec" class="logo">
                         </div>
                 
                         <div class="container">
                             <label for="email"><b>Email</b></label>
-<<<<<<< HEAD
                             <input type="email" placeholder="Enter email address" name="email" required>
 
-=======
-                            <input type="text" placeholder="Enter email address" name="email" required>
-                
->>>>>>> 847104d3e53dfb9d1679eb5320b209a9ea158cb7
                             <label for="psw"><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" name="psw" required>
                 
@@ -140,7 +135,7 @@
                     <form class="modal-content animate" action="/action_page.php">
                       <div class="imgcontainer">
                         <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
-                        <img src="logo1.png" alt="Healtdec" class="logo">
+                        <img src="Logo1.png" alt="Healtdec" class="logo">
                       </div>
                   
                       <div class="container">
@@ -171,9 +166,51 @@
                             modal2.style.display = "none";
                         }
                         if (event.target == modal3) {
-                    modal3.style.display = "none";
+                            modal3.style.display = "none";
+                        }
                     }
-                    }
+
+                    const login = document.getElementById('login');
+
+                    login.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        const formData = new FormData(this);
+                        fetch('login.php', {
+                            method: 'post',
+                            body: formData
+                            }).then(function (response) {
+                                return response.text();
+                            }).then(function (text) {
+                                document.getElementById("error").innerHTML = (text);
+                                if((text) == "Success!"){
+                                    window.location.href = "account.php";
+                                }
+                            }).catch(function (error) {
+                                console.error(error);
+                            })
+                    });
+
+                    const register = document.getElementById('register');
+                    register.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        const formData = new FormData(this);
+                        fetch('register.php', {
+                            method: 'post',
+                            body: formData
+                            }).then(function (response) {
+                                return response.text();
+                            }).then(function (text) {
+                                document.getElementById("regerror").innerHTML = (text);
+                                if((text) == "Success!"){
+                                    modal.style.display = "inline-block";
+                                    modal2.style.display = "none";
+                                    modal3.style.display = "none";
+                                    alert("Registeration successful, please login.");
+                                }
+                            }).catch(function (error) {
+                                console.error(error);
+                            })
+                    });
 
 
                 </script>

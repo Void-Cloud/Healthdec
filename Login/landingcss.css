@@ -1,196 +1,196 @@
 * {
-  margin: 0;
-  padding:0;
-  box-sizing: border-box;
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
 }
 html {
-  font-size: 12px;
-  width: 100%;
-  height: 100%;
-  font-family: 'Noto Sans', sans-serif;
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
+    font-family: 'Noto Sans', sans-serif;
 }
 body {
-  background-image: url(wallpaper.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-color:#545a615b;
-  background-blend-mode:soft-light;
+    background-image: url(wallpaper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color:#545a615b;
+    background-blend-mode:soft-light;
 }
 .page{
-position: relative;
-width:100%;
-height:100%;
-left:0;
-  top:0;
+	position: relative;
+	width:100%;
+	height:100%;
+	left:0;
+    top:0;
 }
 #second{ /* Second full screen of content*/
-top:100%;
-background:#FFF6F1;
+	top:100%;
+	background:#FFF6F1;
 }
 .header {
-  width: 100%;
-  height: 100vh;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  
+    width: 100%;
+    height: 100vh;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    
 }
 nav {
-  width: 95%;
-  height: 7rem;
-  line-height: 7rem;
-  position: relative; /* CHANGE TO FIXED FOR MOVING NAV BAR */
-  top: 2rem;
-  left: 50%;
-  font-size: 1.4rem;
-  transform: translateX(-50%);
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  text-transform: uppercase;
+    width: 95%;
+    height: 7rem;
+    line-height: 7rem;
+    position: relative; /* CHANGE TO FIXED FOR MOVING NAV BAR */
+    top: 2rem;
+    left: 50%;
+    font-size: 1.4rem;
+    transform: translateX(-50%);
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-transform: uppercase;
 }
 /*.logo-box{
-  float: left; 
+    float: left; 
 }*/
 nav ul {
-  display: flex;
-  list-style: none;
-  float: right;
+    display: flex;
+    list-style: none;
+    float: right;
 }
 nav ul li {
-  display: inline-block;
-  padding: 0 1.5rem;
+    display: inline-block;
+    padding: 0 1.5rem;
 }
 nav ul li a {
-  text-decoration: none;
-  color: #fff;
+    text-decoration: none;
+    color: #fff;
 }
 nav ul li a:hover {
-  padding-bottom: .5rem;
-  border-bottom: .1rem solid #fff;
+    padding-bottom: .5rem;
+    border-bottom: .1rem solid #fff;
 }
 .heading{
-  height:300px;
-  margin:auto;
-  position:absolute;
-  top:0px; bottom:0px; right:0px; left:0px;
+    height:300px;
+    margin:auto;
+    position:absolute;
+    top:0px; bottom:0px; right:0px; left:0px;
 
 }
 .title1{
-  display: block;
-  text-align: center;
-  color:white;
-  font-size:16vh;
-  animation: moveLeft 1s ease-in;
+    display: block;
+    text-align: center;
+    color:white;
+    font-size:16vh;
+    animation: moveLeft 1s ease-in;
 }
 .title2{
-  display:block;
-  margin-top:1.2vh;
-  text-align: center;
-  color:white;
-  font-size:3.8vh;
-  animation: moveLeft 1s ease-in;
+    display:block;
+    margin-top:1.2vh;
+    text-align: center;
+    color:white;
+    font-size:3.8vh;
+    animation: moveLeft 1s ease-in;
 }
 
 /* button{
-  margin: 50px auto;
-  display:block;
-  width:180px;
-  height:50px;
-  border:3px solid white;
-  background-color:rgba(255,255,255,0);
-  color:white;
-  font-family:sans-serif;
-  font-weight: bold;
-  border-radius: 5px;
-  animation: moveUp 1s ease-in;
-  
-  transition: background-color 1000ms, color 1000ms;
+    margin: 50px auto;
+    display:block;
+    width:180px;
+    height:50px;
+    border:3px solid white;
+    background-color:rgba(255,255,255,0);
+    color:white;
+    font-family:sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    animation: moveUp 1s ease-in;
+    
+    transition: background-color 1000ms, color 1000ms;
 }  OLD BUTTON*/
 .register:hover{
-  background-color:rgba(255,255,255,1);
-  color:rgba(34, 34, 34, 0.836);
-  cursor:pointer;
-  transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+    background-color:rgba(255,255,255,1);
+    color:rgba(34, 34, 34, 0.836);
+    cursor:pointer;
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
 
-  transition: background-color 1000ms, color 1000ms;
+    transition: background-color 1000ms, color 1000ms;
 }
 .secondone {
-  background-color:#fff;
-  height: 50%; 
-  min-height: 50vh;
-  margin: auto;    
+    background-color:#fff;
+    height: 50%; 
+    min-height: 50vh;
+    margin: auto;    
 }
 .secondtwo {
-  background-color: #D3E3FC;
-  height: 50%;
-  min-height: 50vh;
-  margin: auto;  
+    background-color: #D3E3FC;
+    height: 50%;
+    min-height: 50vh;
+    margin: auto;  
 }
 .page h1 {
-  font-size: 46px;
-  text-align: center;
-  padding-top: 5rem;
-  padding-bottom: 3rem;
+    font-size: 46px;
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
 
 }
 .page p {
-  font-size: 18px;
-  padding-left: 25rem;
-  padding-right: 25rem;
-  
+    font-size: 18px;
+    padding-left: 25rem;
+    padding-right: 25rem;
+    
 
 }
 @keyframes moveLeft {
-  0%{
-      opacity: 0;
-      transform: translateX(-10rem);
-  }
-  100%{
-      opacity:1;
-      transform: translate(0);
-  }
-}
-@keyframes moveUp {
-  0%{
-      opacity: 0;
-      transform: translateY(3.5vh);
-  }
-  100%{
-      opacity:1;
-      transform: translate(0);
-  }
-}
-/* @media screen and (max-width: 700px) { NOT USED ANYMORE! 
-  nav ul {   
-    width: 100%;
-  }
-  .logo-box img {
-      display: none;
-  }
-} */
-@media screen and (max-width: 1100px) {
-  .page p {   
-      padding-right: 5rem;
-      padding-left: 5rem;
+    0%{
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    100%{
+        opacity:1;
+        transform: translate(0);
     }
 }
+@keyframes moveUp {
+    0%{
+        opacity: 0;
+        transform: translateY(3.5vh);
+    }
+    100%{
+        opacity:1;
+        transform: translate(0);
+    }
+}
+/* @media screen and (max-width: 700px) { NOT USED ANYMORE! 
+    nav ul {   
+      width: 100%;
+    }
+    .logo-box img {
+        display: none;
+    }
+} */
+@media screen and (max-width: 1100px) {
+    .page p {   
+        padding-right: 5rem;
+        padding-left: 5rem;
+      }
+}
 @media screen and (max-width: 860px) {
-.page p {   
-    padding-bottom: 5rem;
-  }
+  .page p {   
+      padding-bottom: 5rem;
+    }
 }
 /* @media screen and (max-height: 600px) {
-  .page p {
-      font-size: 5px;
-  }
+    .page p {
+        font-size: 5px;
+    }
 } EDIT LATER FOR MOBILE SCREENS */
 /* @media screen and (max-width: 1100px) { REALLY BAD WAY TO DO THIS AND LEADS TO MORE PROBLEMS
 @media screen and (max-height: 900px) {
-  .page {   
-    position: relative;
-  }
-  .page p {
-      padding-bottom: 5rem;
-  }
+    .page {   
+      position: relative;
+    }
+    .page p {
+        padding-bottom: 5rem;
+    }
 } */
 /* 
 
@@ -198,89 +198,89 @@ nav ul li a:hover {
 
 */
 .center {
-  
+    
 }
 
 /* Full-width input fields */
 input[type=text], input[type=password], input[type=email] {
-width: 100%;
-padding: 12px 20px;
-margin: 8px 0;
-display: inline-block;
-border: 1px solid #ccc;
-box-sizing: border-box;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 label[for=email], label[for=psw], label[for=psw2] {
-font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 input[type=checkbox] {
--ms-transform: scale(2); /* IE */
--moz-transform: scale(2); /* FF */
--webkit-transform: scale(2); /* Safari and Chrome */
--o-transform: scale(2); /* Opera */
-padding: 10px;
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  padding: 10px;
 }
 .remembertext {
-padding-left: 5px;
-font-size: 16px;
+  padding-left: 5px;
+  font-size: 16px;
 }
 /* Set a style for all buttons */
 /* .container button { OLD BUTTON STYLE, NOT USED
-background-color: #77A6F7;
-color: white;
-padding: 14px 20px;
-margin: 8px 0;
-border: none;
-cursor: pointer;
-width: 100%;
-border-radius: 10px;
-display: inline-block;
+  background-color: #77A6F7;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 10px;
+  display: inline-block;
 } */
 button {
-background-color: #77A6F7;
-color: white;
-padding: 14px 20px;
-margin: 8px 0;
-border: none;
-cursor: pointer;
-width: 100%;
-border-radius: 10px;
+  background-color: #77A6F7;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 10px;
 }
 
 .container button:hover {
-opacity: 0.8;
+  opacity: 0.8;
 }
 .parent button { /* THESE ARE THE LOGIN AND REGISTER BUTTONS ON FRONTPAGE */
-background-color: #77A6F7;
-color: white;
-padding: 2.5vh 2.5vh;
-margin: 7.5vh 0.3vh;
-font-size: 2.8vh;
-border: 0.2vh solid #fff;
-cursor: pointer;
-width: 16vh;
-border-radius: 6px;
-display: inline-block;
-animation: moveUp 1s ease;  
+  background-color: #77A6F7;
+  color: white;
+  padding: 2.5vh 2.5vh;
+  margin: 7.5vh 0.3vh;
+  font-size: 2.8vh;
+  border: 0.2vh solid #fff;
+  cursor: pointer;
+  width: 16vh;
+  border-radius: 6px;
+  display: inline-block;
+  animation: moveUp 1s ease;  
 }
 
 .parent button:hover {
-background-color: #D3E3FC;
-opacity: 0.85;
+  background-color: #D3E3FC;
+  opacity: 0.85;
 }
 
 /* Extra styles for the cancel button */
 .cancelbtn {
-width: auto;
-padding: 10px 18px;
-background-color: #77A6F7;
+  width: auto;
+  padding: 10px 18px;
+  background-color: #77A6F7;
 }
 
 /* Center the image and position the close button */
 .imgcontainer {
-text-align: center;
-margin: 18px 0 8px 0;
-position: relative;
+  text-align: center;
+  margin: 18px 0 8px 0;
+  position: relative;
 }
 
 img.logo {
@@ -288,157 +288,157 @@ img.logo {
 }
 
 .container {
-padding: 8px;
+  padding: 8px;
 }
 
 span.psw {
-float: right;
-padding-top: 2px;
+  float: right;
+  padding-top: 2px;
 }
 
 /* The Modal (background) */
 .modal {
-display: none; /* Hidden by default */
-position: fixed; /* Stay in place */
-z-index: 1; /* Sit on top */
-left: 0;
-top: 0;
-width: 100%; /* Full width */
-height: 100%; /* Full height */
-overflow: auto; /* Enable scroll if needed */
-background-color: rgb(0,0,0); /* Fallback color */
-background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-padding-top: 60px;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
 }
 
 /* Modal Content/Box */
 .modal-content {
-background-color: #fefefe;
-margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-border: 1px solid #888;
-width: 45%; /* Could be more or less, depending on screen size */
-border-radius: 10px;
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 45%; /* Could be more or less, depending on screen size */
+  border-radius: 10px;
 }
 
 /* The Close Button (x) */
 .close {
-position: absolute;
-right: 25px;
-top: 0;
-color: #000;
-font-size: 35px;
-font-weight: bold;
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-color: rgb(126, 101, 109);
-cursor: pointer;
+  color: rgb(126, 101, 109);
+  cursor: pointer;
 }
 
 /* Add Zoom Animation */
 .animate {
--webkit-animation: animatezoom 0.6s;
-animation: animatezoom 0.6s
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
 }
 
 @-webkit-keyframes animatezoom {
-from {-webkit-transform: scale(0)} 
-to {-webkit-transform: scale(1)}
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
 }
-
+  
 @keyframes animatezoom {
-from {transform: scale(0)} 
-to {transform: scale(1)}
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
 }
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
-span.psw {
-   display: block;
-   float: none;
-}
-.cancelbtn {
-   width: 100%;
-}
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
 }
 @media screen and (max-width: 740px) {
-.modal-content {
-  width: 100%;
-  height: 100%;
-}
+  .modal-content {
+    width: 100%;
+    height: 100%;
+  }
 }
 .parent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 @media screen and (max-width: 740px) {
-  .title1 {
-    font-size: 86px;
-  }
+    .title1 {
+      font-size: 86px;
+    }
 }
 @media screen and (max-height: 560px) {
-  .title1 {
-    font-size: 68px;
-  }
-  .title2 {
-    font-size: 22px;
-  }
-  .parent button {
-    font-size: 18px;
-    height: auto;
-    width: auto;
-    padding: 10px 10px 10px 10px;
-  }
+    .title1 {
+      font-size: 68px;
+    }
+    .title2 {
+      font-size: 22px;
+    }
+    .parent button {
+      font-size: 18px;
+      height: auto;
+      width: auto;
+      padding: 10px 10px 10px 10px;
+    }
 }
 #myBtn {          /* Scroll button */
-display: none;
-position: fixed;
-bottom: 2vh;
-right: 4vh;
-z-index: 99;
-font-size: 3.2vh;
-border: none;
-outline: none;
-background-color: #77A6FC;
-color: white;
-cursor: pointer;
-padding: 10px 12px 10px 12px;
-border-radius: 4px;
-width: auto;
+  display: none;
+  position: fixed;
+  bottom: 2vh;
+  right: 4vh;
+  z-index: 99;
+  font-size: 3.2vh;
+  border: none;
+  outline: none;
+  background-color: #77A6FC;
+  color: white;
+  cursor: pointer;
+  padding: 10px 12px 10px 12px;
+  border-radius: 4px;
+  width: auto;
 }
 
 #myBtn:hover {
-background-color: #D3E3FC;
+  background-color: #D3E3FC;
 }
 /*#ac-wrapper {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(255, 255, 255, .6);
-z-index: 1001;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, .6);
+  z-index: 1001;
 }
 #popup {
-width: 20%;
-height: 94px;
-min-width: 260px;
-min-height: 94px;
-background: #D3E3FC;
-border: 2px solid #77A6FC;
-border-radius: 6px;
--moz-border-radius: 25px;
--webkit-border-radius: 25px;
-box-shadow: #64686e 0px 0px 3px 3px;
--moz-box-shadow: #64686e 0px 0px 3px 3px;
--webkit-box-shadow: #64686e 0px 0px 3px 3px;
-position: relative;
-top: 30%;
-left: 40%;
-
+  width: 20%;
+  height: 94px;
+  min-width: 260px;
+  min-height: 94px;
+  background: #D3E3FC;
+  border: 2px solid #77A6FC;
+  border-radius: 6px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  box-shadow: #64686e 0px 0px 3px 3px;
+  -moz-box-shadow: #64686e 0px 0px 3px 3px;
+  -webkit-box-shadow: #64686e 0px 0px 3px 3px;
+  position: relative;
+  top: 30%;
+  left: 40%;
+  
 }
 #popup input {
-margin-top: 6px;
+  margin-top: 6px;
 }*/
