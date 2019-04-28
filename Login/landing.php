@@ -100,7 +100,7 @@
                 
                         <div class="container">
                             <label for="email"><b>Email</b></label>
-                            <input type="text" placeholder="Enter email address" name="email" required>
+                            <input type="email" placeholder="Enter email address" name="email" required>
 
                             <label for="psw"><b>Password</b></label>
                             <p  style="font-size: 16px">Password must contain a number, an uppercase letter and must be between 4-30 characters long.</p>

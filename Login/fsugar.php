@@ -1,0 +1,112 @@
+<?php
+    session_start();
+
+    $config = parse_ini_file("../../../env.ini");
+
+    $connection = mysqli_connect($config["dbaddr"], $config["username"], $config["password"], $config["dbname"]);
+
+    if($connection === false){
+        die( "Database connection failed :(" );
+    }
+
+    if(!($stmt = $connection->prepare("SELECT * from Measure WHERE Type = 1 AND Id = (?) ORDER BY date DESC, time"))){
+        echo "Prepare Failed: (" . $mysqli->errno . ") " . $mysqli->error;
+    }
+    if (!$stmt->bind_param("i", $_SESSION['id'])){
+        echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+    }
+
+    if (!$stmt->execute()) {
+        echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+    }
+    
+    if(!($res = $stmt->get_result())) {
+        echo "Getting result set failed: (" . $stmt->errno . ") " . $stmt->error;
+    }
+    $res = $res->fetch_all();
+
+    if(count($res) <= 15){
+        $_SESSION['offset'] = 0;
+        $rows = count($res);
+    }
+    else{
+        $rows = 15;
+        switch($_POST['offset']){
+            case 0:
+                $_SESSION['offset'] = 0;
+                break;
+            case 1: 
+                if($_SESSION['offset'] + 15 > count($res) - 15 ){
+                    $_SESSION['offset'] = count($res) - 15;
+                }
+                else{
+                    $_SESSION['offset'] = $_SESSION['offset'] + 15;
+                }
+                break;
+            case 2:
+                if($_SESSION['offset'] - 15 < 0){
+                    $_SESSION['offset'] = 0;
+                }
+                else{
+                    $_SESSION['offset'] = $_SESSION['offset'] - 15;
+                }
+                break;
+            default:
+                $_SESSION['offset'] = 0;
+                
+        }
+    }
+?>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title:{
+		text: "Blood Glucose"
+	},
+	axisX: {
+		valueFormatString: "DD MMM,YY HH,mm"
+	},
+	axisY: {
+		title: "",
+		includeZero: false,
+		suffix: " °C"
+	},
+	legend:{
+		cursor: "pointer",
+		fontSize: 16,
+		itemclick: toggleDataSeries
+	},
+	toolTip:{
+		shared: true
+	},
+	data: [{
+		name: "Systolic",
+		type: "spline",
+		yValueFormatString: "# mmHg",
+		showInLegend: true,
+        dataPoints: [
+<?
+			for($i = $_SESSION['offset']; $i < $rows + $_SESSION['offset']; $i++){
+                echo "{ x: new Date(". substr($res[$i][1], -10, 4). ",". substr($res[$i][1], -5, 2). ",".substr($res[$i][1], -2, 2). ",".substr($res[$i][2], -8, 2). ",".substr($res[$i][2], -5, 2)."), y: ". $res[$i][3]. " },";
+            }
+?>			
+		]
+	},
+	{
+		
+	}]
+});
+chart.render();
+
+function toggleDataSeries(e){
+	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	}
+	else{
+		e.dataSeries.visible = true;
+	}
+	chart.render();
+}
+
+}

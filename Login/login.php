@@ -47,6 +47,7 @@
                 $_SESSION['name'] = $email;
                 $_SESSION['id'] = $res[0][2];
                 $_SESSION['height'] = $res[0][3];
+                $_SESSION['offset'] = 0;
 
                 echo "Success!";
             }
