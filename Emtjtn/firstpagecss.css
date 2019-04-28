@@ -145,6 +145,7 @@
   .mainleft {
     flex: 50%;
     background-color: white;
+    padding-top:2rem;
     padding-right: 8vh;
     padding-left: 18vh;
     padding-bottom: 200px;
@@ -190,7 +191,23 @@
   button:hover {
     opacity: 0.8;
   }
-  
+  button[type=direction] {
+    background-color: #77A6F7;
+    color: white;
+    font-size: 30px;
+    padding: 4px 14px;
+    margin: 2.5vh 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    border-radius: 10px;
+  }
+  button[type=direction]:nth-child(2) { /* Buttons for switching graph data*/
+
+  }
+  button[type=direction]:nth-child(3) {
+    float: right;
+  }
   .mainleft p, .mainright p {
     width: 40%;
   }
@@ -211,7 +228,7 @@
   nav {
     font-family: monospace;
     position: absolute;
-    left: 9.3%;
+    left: 8.5%;
     padding-top: 6vh;
   }
   
@@ -223,7 +240,7 @@
     font-size: 14px;
   }
   .dropdown {
-    font-size: 12px;
+    font-size: 14px;
   }
   
   li {
@@ -235,6 +252,9 @@
     position: relative;
     text-decoration: none;
     transition-duration: 0.5s;
+  }
+  .dropdown li {
+    background: rgb(170, 201, 255);
   }
     
   li a {
@@ -327,6 +347,9 @@ section:first-of-type {
       padding-left: 2vh;
       padding-right: 8vh;
     }
+    nav {
+      left: 8vh;
+    }
   }
   @media screen and (max-width: 900px) {
     .row {   
@@ -335,6 +358,9 @@ section:first-of-type {
     .mainleft, .mainright {
       padding-left: 4vh;
       padding-right: 4vh;
+    }
+    nav {
+      left: 25%;
     }
   }
 
@@ -355,7 +381,6 @@ section:first-of-type {
       padding: 100px 0px 60px 0px;
     }
     nav {
-      left: 9.3%;
       padding-top: 1.2vh;
     }
   }
