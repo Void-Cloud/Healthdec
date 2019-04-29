@@ -1,0 +1,17 @@
+html{
+    background-image: url('fi/wallpaper.jpg')
+}
+div:nth-child(1){
+    padding-top:200px;
+    width:50%;
+    float:left;
+    text-align: center;
+    font-size: 32px;
+}
+div:nth-child(2){
+    padding-top:200px;
+    width:50%;
+    float:right;
+    text-align: center;
+    font-size: 32px;
+}

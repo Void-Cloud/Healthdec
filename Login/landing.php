@@ -15,6 +15,7 @@
 <head>
  
 <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="landingcss.css">
 
 <!-- FONTS AND FOOTER STYLE  -->
@@ -33,8 +34,8 @@
             <nav>
                 
                  <ul>
-                    <li><a href="#"><img src="Engflag.jpg" alt="FIN"></a></li>
-                    <li><a href="landingFin.html"><img src="Finflag.png" alt="ENG"></a></li>
+                    <li><a href="#"><img src="Engflag.jpg" alt="ENG"></a></li>
+                    <li><a href="../fi/landingFin.php"><img src="Finflag.png" alt="FI"></a></li>
                 </ul> 
             </nav>
             

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="stylesheet" href="ContactUsFin.css">
+  <link rel="stylesheet" href="footer-distributed-with-address-and-phones.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+  <title>Healthdec</title>
+
+
+</head>
+
+<body>
+
+  <div class="uppersection">
+    <h1>Healthdec</h1>
+
+    <div class="upperlist">
+        <a href="FirstPageFin.php">Koti</a>
+        <a href="ourteamFin.html">Tiimi</a>
+        <a href="ContactUsFin.html">Ota Yhteyttä</a>
+      </div>
+
+  </div>
+
+
+  <div class="container">  
+    <form id="contact" action="" method="post">
+      <h3>Ota meihin yhteyttä!</h3>
+      <h4>Anna meille palautetta</h4>
+      <fieldset>
+        <input placeholder="Nimesi" type="text" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Sähköpostiosoite" type="email" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Puhelinnumero (vapaaehtoinen)" type="tel" tabindex="3" >
+      </fieldset>
+      <fieldset>
+        <textarea placeholder="Kirjoita tähän..." tabindex="5" required></textarea>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Lähettää">Lähetä</button>
+      </fieldset>
+    </form>
+  </div>
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">⇧</button>
+  <!-- Footer -->
+  <footer class="footer-distributed">
+
+    <div class="footer-left">
+
+        <img src="logo1.png" alt="Healtdec" class="logo">
+
+
+      <p class="footer-company-name">Healthdec &copy; 2019</p>
+    </div>
+
+    <div class="footer-center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>28 Metropöliätie</span> Helsinki, Finland</p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+123 123123123</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="#">healthdec@examplemail.com</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-company-about">
+          <span>Tietoa sivusta</span>
+					Tämä sivu on tehty osana Metropolian Ammattikorkeakoulun kurssiprojektia.
+      </p>
+
+      <div class="footer-icons">
+
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+
+        <a href="#"><i class="fa fa-github"></i></a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+      } else {
+        document.getElementById("myBtn").style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+</body>
+
+</html>
