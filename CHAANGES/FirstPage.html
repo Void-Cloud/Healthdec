@@ -1,13 +1,3 @@
-<?php
-    require_once('HTTPS.php');
-
-    session_start();
-    if($_SESSION['name'] == ""){
-        session_destroy();
-        header("Location: landing.php");
-    }
-    $_SESSION['bsoffset'] = 0;
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,14 +29,14 @@
     <h1>Healthdec</h1>
 
     <div class="upperlist">
-      <a href="FirstPage.php">Home</a>
+      <a href="FirstPage.html">Home</a>
       <a href="ourteam.html">Our Team</a>
       <a href="ContactUs.html">Contact Us</a>
     </div>
 
   </div>
 
-  <nav role="navigation">
+  <nav>
     <ul>
       <li><a href="#">Choose a form</a>
         <ul class="dropdown">
@@ -66,130 +56,30 @@
           <h2>Blood Sugar</h2>
           <h5>Please enter and add your information</h5>
 
-          <form class="formbloodsugar" id="sugar" name= "sugar">
+          <form class="formbloodsugar">
 
             <div class="container">
               <label for="bloodsugar"><b>Blood Sugar</b></label>
-              <input type="text" placeholder="0.0 (mmol/L)" name="bloodsugar" required>
+              <input id="bloodsugar" type="text" placeholder="0.0 (mmol/L)" name="bloodsugar" required>
 
               <label for="bloodsugar"><b>Date</b></label>
-              <input type="date" placeholder="YYYY-MM-DD" value="<? echo date("Y-m-d")?>" name="date" required>
+              <input type="text" placeholder="DD/MM/YYYY" name="Date" required>
 
               <label for="bloodsugar"><b>Time</b></label>
-              <input type="time" placeholder="HH:MM" value="<? echo date("H:i")?>" name="time" required>
+              <input type="text" placeholder="HH:MM" name="Time" required>
 
-              <p id="result" style="font-size: 16px; color:red"></p>
-
-              <input type="hidden" name="bsoffset" value="0" id="bsoffset">
-
-              <button type="submit">Add</button>
+              <button class="addbutton">Add</button>
+              <button class="latest">Delete latest value</button>
 
             </div>
 
           </form>
-          <button onclick="bsdelval()" type="latest">Delete latest value</button>
-          <p id="yay" style="font-size: 16px"></p>
         </div>
 
-        <script>
-        
-        function increaseoffset(){
-
-            document.getElementById("bsoffset").value = 1;
-
-            const formData = new FormData(sugar);
-
-            fetch('fsugar.php', {
-                method: 'post',
-                body: formData
-                }).then(function (response) {
-                    return response.text();
-                }).then(function (text) {
-                    document.getElementById("bsv").innerHTML = (text);
-                }).catch(function (error) {
-                    console.error(error);
-                })
-        }
-        function decreaseoffset(){
-
-            document.getElementById("bsoffset").value = 2;
-
-            const formData = new FormData(sugar);
-
-            fetch('fsugar.php', {
-                method: 'post',
-                body: formData
-                }).then(function (response) {
-                    return response.text();
-                }).then(function (text) {
-                    document.getElementById("bsv").innerHTML = (text);
-                }).catch(function (error) {
-                    console.error(error);
-                })
-        }
-        function fetchnewest(){
-
-            document.getElementById("bsoffset").value = 0;
-
-            const formData = new FormData(sugar);
-
-            fetch('fsugar.php', {
-                method: 'post',
-                body: formData
-                }).then(function (response) {
-                    return response.text();
-                }).then(function (text) {
-                    document.getElementById("bsv").innerHTML = (text);
-                }).catch(function (error) {
-                    console.error(error);
-                })
-        }
-        function bsdelval(){
-          const formData = new FormData(sugar);
-          fetch('bsdelval.php', {
-            method: 'post',
-            body: formData
-            }).then(function (response) {
-                return response.text();
-            }).then(function (text) {
-                document.getElementById("yay").innerHTML = (text);
-                fetchnewest();
-            }).catch(function (error) {
-                console.error(error);
-            })
-        }
-        
-
-        const sugar = document.getElementById('sugar');
-
-        sugar.addEventListener('submit', function (e) {
-
-            e.preventDefault();
-
-            const formData = new FormData(this);
-
-            fetch('sugar.php', {
-                method: 'post',
-                body: formData
-                }).then(function (response) {
-                    return response.text();
-                }).then(function (text) {
-                    document.getElementById("result").innerHTML = (text);
-                }).catch(function (error) {
-                    console.error(error);
-                })
-
-            fetchnewest();
-        });
-        fetchnewest();
-
-
-        </script>
-
         <div class="mainright">
-          <div class="fakeimg" id="bsv">Kaava1</div>
-          <button onclick="increaseoffset()" type="direction">⇦</button>
-          <button onclick="decreaseoffset()" type="direction">⇨</button>
+          <div class="fakeimg">Kaava1</div>
+          <button class="direction">⇦</button>
+          <button class="direction">⇨</button>
         </div>
       </div>
     </article>
@@ -218,8 +108,8 @@
               <label for="bloodsugar"><b>Time</b></label>
               <input type="text" placeholder="HH:MM" name="Time" required>
 
-              <button type="addbutton">Add</button>
-              <button type="latest">Delete latest value</button>
+              <button class="addbutton">Add</button>
+              <button class="latest">Delete latest value</button>
 
             </div>
 
@@ -228,8 +118,8 @@
 
         <div class="mainright">
           <div class="fakeimg">Kaava2</div>
-          <button type="direction">⇦</button>
-          <button type="direction">⇨</button>
+          <button class="direction">⇦</button>
+          <button class="direction">⇨</button>
         </div>
       </div>
     </article>
@@ -255,8 +145,8 @@
               <label for="bloodsugar"><b>Time</b></label>
               <input type="text" placeholder="HH:MM" name="Time" required>
 
-              <button type="addbutton">Add</button>
-              <button type="latest">Delete latest value</button>
+              <button class="addbutton">Add</button>
+              <button class="latest">Delete latest value</button>
 
             </div>
 
@@ -265,8 +155,8 @@
 
         <div class="mainright">
           <div class="fakeimg">Kaava3</div>
-          <button type="direction">⇦</button>
-          <button type="direction">⇨</button>
+          <button class="direction">⇦</button>
+          <button class="direction">⇨</button>
         </div>
       </div>
     </article>
@@ -333,8 +223,8 @@
   </script>
   <script>
     // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
-    
+    window.onscroll = function () { scrollFunction() };
+
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         document.getElementById("myBtn").style.display = "block";
@@ -342,13 +232,13 @@
         document.getElementById("myBtn").style.display = "none";
       }
     }
-    
+
     // When the user clicks on the button, scroll to the top of the document
     function topFunction() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     }
-    </script>
+  </script>
 
 </body>
 

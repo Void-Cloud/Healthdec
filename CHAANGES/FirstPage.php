@@ -1,15 +1,3 @@
-<?php
-    require_once('HTTPS.php');
-
-    session_start();
-    if($_SESSION['name'] == ""){
-        session_destroy();
-        header("Location: landingFin.php");
-    }
-    $_SESSION['bsoffset'] = 0;
-?>
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
 
@@ -18,7 +6,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <link rel="stylesheet" href="firstpagecssFin.css">
+  <link rel="stylesheet" href="firstpagecss.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="footer-distributed-with-address-and-phones.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
@@ -39,20 +27,20 @@
     <h1>Healthdec</h1>
 
     <div class="upperlist">
-      <a href="FirstPageFin.php">Koti</a>
-      <a href="ourteamFin.html">Tiimi</a>
-      <a href="ContactUsFin.html">Ota Yhteyttä</a>
+      <a href="FirstPage.php">Home</a>
+      <a href="ourteam.html">Our Team</a>
+      <a href="ContactUs.html">Contact Us</a>
     </div>
 
   </div>
 
   <nav role="navigation">
     <ul>
-      <li><a href="#">Valitse tiedot</a>
+      <li><a href="#">Choose a form</a>
         <ul class="dropdown">
-          <li data-rel="1" class="active">Verensokeri</li>
-          <li data-rel="2">Verenpaine</li>
-          <li data-rel="3">Painon hallinta</li>
+          <li data-rel="1" class="active">Blood Sugar</li>
+          <li data-rel="2">Blood Pressure</li>
+          <li data-rel="3">Weight</li>
         </ul>
       </li>
     </ul>
@@ -63,32 +51,31 @@
       <div class="row">
 
         <div class="mainleft">
-          <h2>Verensokeri</h2>
-          <h5>Kirjaa ja lisää arvot</h5>
+          <h2>Blood Sugar</h2>
+          <h5>Please enter and add your information</h5>
 
           <form class="formbloodsugar" id="sugar" name= "sugar">
 
             <div class="container">
-              <label for="bloodsugar"><b>Verensokeri</b></label>
+              <label for="bloodsugar"><b>Blood Sugar</b></label>
               <input type="text" placeholder="0.0 (mmol/L)" name="bloodsugar" required>
 
-              <label for="bloodsugar"><b>Pvm</b></label>
+              <label for="bloodsugar"><b>Date</b></label>
               <input type="date" placeholder="YYYY-MM-DD" value="<? echo date("Y-m-d")?>" name="date" required>
 
-              <label for="bloodsugar"><b>Aika</b></label>
+              <label for="bloodsugar"><b>Time</b></label>
               <input type="time" placeholder="HH:MM" value="<? echo date("H:i")?>" name="time" required>
 
               <p id="result" style="font-size: 16px; color:red"></p>
 
               <input type="hidden" name="bsoffset" value="0" id="bsoffset">
 
-              <button type="submit">Lisää</button>
-              
+              <button type="submit">Add</button>
 
             </div>
 
           </form>
-          <button onclick="bsdelval()" type="latest">Poista viimeisin arvo</button>
+          <button onclick="bsdelval()" type="latest">Delete latest value</button>
           <p id="yay" style="font-size: 16px"></p>
         </div>
 
@@ -159,6 +146,7 @@
                 console.error(error);
             })
         }
+        
 
         const sugar = document.getElementById('sugar');
 
@@ -175,11 +163,11 @@
                     return response.text();
                 }).then(function (text) {
                     document.getElementById("result").innerHTML = (text);
-                    fetchnewest();
                 }).catch(function (error) {
                     console.error(error);
                 })
 
+            fetchnewest();
         });
         fetchnewest();
 
@@ -200,26 +188,26 @@
       <div class="row">
 
         <div class="mainleft">
-          <h2>Verenpaine</h2>
-          <h5>Kirjaa ja lisää arvot</h5>
+          <h2>Blood Pressure</h2>
+          <h5>Please enter and add your information</h5>
 
           <form class="formbloodsugar">
 
             <div class="container">
-              <label for="bloodsugar"><b>Yläpaine</b></label>
+              <label for="bloodsugar"><b>Systolic</b></label>
               <input type="text" placeholder="0.0 (mmHg)" name="systolic" required>
 
-              <label for="bloodsugar"><b>Alapaine</b></label>
+              <label for="bloodsugar"><b>Diastolic</b></label>
               <input type="text" placeholder="0.0 (mmHg)" name="diastolic" required>
 
-              <label for="bloodsugar"><b>Pvm</b></label>
+              <label for="bloodsugar"><b>Date</b></label>
               <input type="text" placeholder="DD/MM/YYYY" name="Date" required>
 
-              <label for="bloodsugar"><b>Aika</b></label>
+              <label for="bloodsugar"><b>Time</b></label>
               <input type="text" placeholder="HH:MM" name="Time" required>
 
-              <button type="addbutton">Lisää</button>
-              <button type="latest">Poista viimeisin arvo</button>
+              <button type="addbutton">Add</button>
+              <button type="latest">Delete latest value</button>
 
             </div>
 
@@ -240,23 +228,23 @@
       <div class="row">
 
         <div class="mainleft">
-          <h2>Paino</h2>
-          <h5>Kirjaa ja lisää arvot</h5>
+          <h2>Weight Tracker</h2>
+          <h5>Please enter and add your information</h5>
 
           <form class="formbloodsugar">
 
             <div class="container">
-              <label for="bloodsugar"><b>Paino</b></label>
+              <label for="bloodsugar"><b>Weight</b></label>
               <input type="text" placeholder="0.0 (kg)" name="weight" required>
 
-              <label for="bloodsugar"><b>Pvm</b></label>
+              <label for="bloodsugar"><b>Date</b></label>
               <input type="text" placeholder="DD/MM/YYYY" name="Date" required>
 
-              <label for="bloodsugar"><b>Aika</b></label>
+              <label for="bloodsugar"><b>Time</b></label>
               <input type="text" placeholder="HH:MM" name="Time" required>
 
-              <button type="addbutton">Lisää</button>
-              <button type="latest">Poista viimeisin arvo</button>
+              <button type="addbutton">Add</button>
+              <button type="latest">Delete latest value</button>
 
             </div>
 
@@ -305,8 +293,9 @@
     <div class="footer-right">
 
       <p class="footer-company-about">
-          <span>Tietoa sivusta</span>
-					Tämä sivu on tehty osana Metropolian Ammattikorkeakoulun kurssiprojektia.
+        <span>About the company</span>
+        Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
+        vehicula sit amet.
       </p>
 
       <div class="footer-icons">

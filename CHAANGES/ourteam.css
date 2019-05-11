@@ -71,23 +71,22 @@ html {
     color: grey;
     padding-bottom: 16px;
   }
-  .container p {
-    padding-bottom: 14px;
-  }
-  
-  .button {
+  .container a {
+    color:white;
+    text-decoration: none;
     border: none;
     outline: 0;
     display: inline-block;
-    padding: 8px;
-    color: white;
     background-color: #77A6F7;
     text-align: center;
     cursor: pointer;
     width: 100%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 8px;
+    margin-bottom: 8px;
   }
-  
-  .button:hover {
+  .container a:hover {
     background-color: rgba(154, 183, 231, 0.836);
   }
   .card img {
