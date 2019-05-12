@@ -4,19 +4,19 @@
         'read_and_close'  => true,
     ]);
     if(!($_SESSION['name'] == "")){
-        header("Location: FirstPageFin.php");
+        header("Location: FirstPage.php");
     }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="en">
 <head>
  
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="landingcssFin.css">
+<link rel="stylesheet" href="landingcss.css">
 
 <!-- FONTS AND FOOTER STYLE  -->
 <link rel="stylesheet" href="footer-distributed-with-address-and-phones.css">	
@@ -50,17 +50,33 @@ window.cookieconsent.initialise({
 </head>
     <body>
 
-        
+            
             <header class="header">
-
+                
             <nav>
                 
                  <ul>
                     <li><a href="../en/landing.php"><img src="Engflag.jpg" alt="ENG"></a></li>
-                    <li><a href="#"><img src="Finflag.png" alt="FI"></a></li>
+                    <li><a href="../fi/landing.php"><img src="Finflag.png" alt="FI"></a></li>
                 </ul> 
             </nav>
+            
             </header>
+            <!--<div id="ac-wrapper" style='display:none'>
+                    <div id="popup">
+                        <center>
+                             <h2>This website uses cookies. By continuing you agree to our terms.</h2>
+                
+                            <input type="submit" name="submit" value="Continue" onClick="PopUp('hide')" />
+                        </center>
+                    </div>
+                </div>
+            window.onload = function () {
+                setTimeout(function () {
+                    PopUp('show');
+                }, 2000);
+            }
+            -->
 
         <div id="first" class="page"></div>
             <div class="heading">
@@ -81,13 +97,13 @@ window.cookieconsent.initialise({
                         </div>
                 
                         <div class="container">
-                            <label for="email"><b>Sähköpostiosoite</b></label>
-                            <input type="text" placeholder="Sähköpostiosoite" name="email" required>
+                            <label for="email"><b>Sähköposti</b></label>
+                            <input type="text" placeholder="Enter email address" name="email" required>
                 
-                            <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Salasana" name="psw" required>
+                            <label for="psw"><b>Salasana</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
                             <p id="error" style="font-size: 16px; color:red"></p>
-                            <button type="submit">Kirjaudu</button>
+                            <button type="submit">Kirjaudu sisään</button>
                             <label>
                                 <input type="checkbox" checked="checked" name="remember">
                                 <span class="remembertext">Pidä minut kirjautuneena</span>
@@ -100,7 +116,7 @@ window.cookieconsent.initialise({
 
 
 
-                                <span class="psw"> Unohditko <a href="#" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">salasanan?</a>
+                                <span class="psw"> Unohtuiko <a href="#" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">salasana?</a>
               
                                 </span>
 
@@ -114,19 +130,19 @@ window.cookieconsent.initialise({
                         <div class="imgcontainer">
                             <span onclick="document.getElementById('id02').style.display='none'" class="close"
                                 title="Close Modal">&times;</span>
-                            <img src="logo1.png" alt="Healtdec" class="logo">
+                            <img src="Logo1.png" alt="Healtdec" class="logo">
                         </div>
                 
                         <div class="container">
-                            <label for="email"><b>Sähköpostiosoite</b></label>
-                            <input type="email" placeholder="Anna sähköpostiosoite" name="email" required>
-                
+                            <label for="email"><b>Sähköposti</b></label>
+                            <input type="email" placeholder="Enter email address" name="email" required>
+
                             <label for="psw"><b>Salasana</b></label>
-                            <p style="font-size: 16px">Salasanassa pitää olla vähintään yksi iso kirjain, yksi pieni kirjain ja yksi numero ja sen täytyy olla 4-30 merkkiä pitkä.</p>
-                            <input type="password" placeholder="Salasana" name="psw" required>
+                            <p style="font-size: 16px">Salasanassa täytyy olla pieni kirjain, iso kirjain ja numero ja sen täytyy olla 4-30 merkkiä pitkä.</p>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
                 
-                            <label for="psw2"><b>Anna salasana uudelleen</b></label>
-                            <input type="password" placeholder="Anna salasana uudelleen" name="psw2" required>
+                            <label for="psw2"><b>Syötä salasana uudestaan</b></label>
+                            <input type="password" placeholder="Enter Password again" name="psw2" required>
                             <p id="regerror" style="font-size: 16px; color:red"></p>
                             <button type="submit">Rekisteröidy</button>
                         </div>
@@ -143,12 +159,12 @@ window.cookieconsent.initialise({
                     <form class="modal-content animate">
                       <div class="imgcontainer">
                         <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
-                        <img src="logo1.png" alt="Healtdec" class="logo">
+                        <img src="Logo1.png" alt="Healtdec" class="logo">
                       </div>
                   
                       <div class="container">
-                            <label for="email"><b>Sähköpostiosoite</b></label>
-                            <input type="text" placeholder="Sähköpostiosoite" name="email" required>
+                            <label for="email"><b>Salasana</b></label>
+                            <input type="text" placeholder="Enter email address" name="email" required>
                         <button type="submit">Lähetä salasana</button>
                       </div>
                   
@@ -174,8 +190,8 @@ window.cookieconsent.initialise({
                             modal2.style.display = "none";
                         }
                         if (event.target == modal3) {
-                    modal3.style.display = "none";
-                    }
+                            modal3.style.display = "none";
+                        }
                     }
 
                     const login = document.getElementById('login');
@@ -191,7 +207,7 @@ window.cookieconsent.initialise({
                             }).then(function (text) {
                                 document.getElementById("error").innerHTML = (text);
                                 if((text) == "Success!"){
-                                    window.location.href = "FirstPageFin.php";
+                                    window.location.href = "FirstPage.php";
                                 }
                             }).catch(function (error) {
                                 console.error(error);
@@ -213,12 +229,14 @@ window.cookieconsent.initialise({
                                     modal.style.display = "inline-block";
                                     modal2.style.display = "none";
                                     modal3.style.display = "none";
-                                    alert("Rekisteröinti onnistui, kirjaudu sisään");
+                                    alert("Registeration successful, please login.");
                                 }
                             }).catch(function (error) {
                                 console.error(error);
                             })
                     });
+
+
                 </script>
             </div>
 
@@ -228,7 +246,7 @@ window.cookieconsent.initialise({
         <div id="second" class="page">
 
                 <div class="secondone">
-                    <h1>About Healthdec</h1>
+                    <h1>Tietoa Healthdec:stä</h1>
                     <p>Healthdec on uusi terveyden seurantaan tarkoitettu sovellus. Sovelluksen 
                         avulla voi seurata verensokeria, verenpainetta, sekä ruumiinpainoa. 
                         Sovellus generoi helposti luettavia kuvaajia, joiden avulla käyttäjän 
@@ -264,7 +282,7 @@ window.cookieconsent.initialise({
 
 				<div>
 					<i class="fa fa-map-marker"></i>
-					<p><span>28 Metropöliätie</span> Helsinki, Suomi</p>
+					<p><span>28 Metropöliätie</span> Helsinki, Finland</p>
 				</div>
 
 				<div>
@@ -315,6 +333,13 @@ window.cookieconsent.initialise({
               document.body.scrollTop = 0;
               document.documentElement.scrollTop = 0;
             }
+            </script>
+            <script>
+            function PopUp(hideOrshow) {
+                if (hideOrshow == 'hide') document.getElementById('ac-wrapper').style.display = "none";
+                else document.getElementById('ac-wrapper').removeAttribute('style');
+            }
+            
             </script>
 
     </body>

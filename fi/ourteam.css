@@ -1,0 +1,186 @@
+html {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    font-family: 'Noto Sans', sans-serif;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  * {
+    margin: 0;
+    padding:0;
+  }
+  
+  .column {
+    float: left;
+    width: 25%;
+    margin-top: 160px;
+    margin-bottom: 120px;
+    padding: 0 8px;
+  }
+  
+  @media screen and (max-width: 1250px) {
+    .column {
+      width: 50%;
+      display: block;
+      margin-top: 60px;
+      margin-bottom: 70px;
+    }
+  }
+  @media screen and (max-width: 720px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+ .card {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+  } 
+
+  .container {
+    padding: 0 16px;
+  }
+  .container h2 {
+      text-align: center;
+      padding-top: 24px;
+      padding-bottom: 24px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .column:nth-child(1) {
+    padding-left: 20px;
+  }
+  .column:nth-child(2) {
+    padding-left: 20px;
+  }
+  .column:nth-child(3) {
+    padding-left: 20px;
+  }
+  .column:nth-child(4) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .title {
+    color: grey;
+    padding-bottom: 16px;
+  }
+  .container a {
+    color:white;
+    text-decoration: none;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    background-color: #77A6F7;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  .container a:hover {
+    background-color: rgba(154, 183, 231, 0.836);
+  }
+  .card img {
+    display: block;
+
+    height: auto;
+  }
+
+  #myBtn {          /* Scroll button */
+    display: none;
+    position: fixed;
+    bottom: 2vh;
+    right: 4vh;
+    z-index: 99;
+    font-size: 3.2vh;
+    border: none;
+    outline: none;
+    background-color: #77A6FC;
+    color: white;
+    cursor: pointer;
+    padding: 10px 12px 10px 12px;
+    border-radius: 4px;
+  }
+  
+  #myBtn:hover {
+    background-color: #D3E3FC;
+  }
+  .uppersection {
+    background-color: #D3E3FC;
+  }
+  .uppersection h1{
+    font-size: 64px;
+    padding: 80px 0px 40px 0px;
+    text-align: center;
+  }
+  .upperlist {
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+  }
+  .uppersection h1 {
+    color: rgb(65, 65, 65);
+  }
+  .upperlist a {
+    color: rgb(65, 65, 65);
+    margin: 16px;
+    padding: 16px;
+    border-bottom: 2px solid rgb(141, 141, 141);
+    text-decoration: none;
+    text-align: center;
+  }
+  .upperbar {
+    background-color: #FFF;
+    height: 50px;
+    -webkit-box-shadow: 0px 1px 2px #161616;
+    -moz-box-shadow: 0px 2px 2px #161616;
+    box-shadow: 0px 1px 2px #161616;
+  }
+  .upperbar img {
+    padding-left: 10px;
+  }
+  .upperbar button {
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(65, 65, 65);
+    padding-top: 11px;
+    padding-right: 30px;
+    padding-left: 4px;
+    margin: 0 ;
+    float: right;
+    font-size: 18px;
+    border:none;
+  }
+  .upperlist a:hover {
+    transform: translateY(-2px);
+  }
+  @media screen and (max-width: 540px) {
+    .upperlist {   
+      flex-direction: column;
+      font-size: 20px;
+    }
+    .uppersection h1 {
+      font-size: 42px;
+      padding: 100px 0px 60px 0px;
+    }
+  }
+  @media screen and (max-height: 680px) {
+    #myBtn {   
+      font-size: 20px;
+      padding: 14px;
+    }
+    .mainleft h2, .mainright h2 {
+      font-size: 26px;
+      padding-top: 16rem;
+    }
+}

@@ -4,7 +4,7 @@
 
 
     if(empty($email) || empty($pass)){
-        echo "Täytä kaikki kentät!";
+        echo "Täytä koko lomake!";
     }
     else{
         $config = parse_ini_file("../../../env.ini");

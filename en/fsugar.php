@@ -81,7 +81,7 @@ var chart = new CanvasJS.Chart("bsvc", {
 		shared: true
 	},
 	data: [{
-        name: "Systolic",
+        name: "Blood sugar",
 		type: "spline",
 		yValueFormatString: "0.0 mmol/L",
 		showInLegend: true,

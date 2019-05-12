@@ -1,0 +1,9 @@
+Register and then login to the site (you can also use the test user: testi@test.com password: Testi1
+
+you can add bloodsugar, blood pressure and weight and it will display it.
+
+you can browse the values with the arrow keys.
+
+you can delete the last value you entered with the delete latest value button.
+
+

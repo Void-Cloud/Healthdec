@@ -35,7 +35,7 @@
     <div class="upperbar">
       <img src="Logosmall.png" alt="Healtdec" class="logo">
       <button onclick="logout()" id="logoutbutton"><i class="fa fa-sign-out"
-          style="font-size:24px;  padding-right:2px; "></i>Logout</button>
+          style="font-size:24px;  padding-right:2px; "></i>Kirjaudu ulos</button>
       
           <script>
           
@@ -49,20 +49,20 @@
     <h1>Healthdec</h1>
 
     <div class="upperlist">
-      <a href="FirstPage.php">Home</a>
-      <a href="ourteam.html">Our Team</a>
-      <a href="ContactUs.html">Contact Us</a>
+      <a href="FirstPage.php">Koti</a>
+      <a href="ourteam.html">Tiimi</a>
+      <a href="ContactUs.html">Ota Yhteyttä</a>
     </div>
 
   </div>
 
   <nav>
     <ul>
-      <li><a href="#">Choose a form</a>
+      <li><a href="#">Valitse tiedot</a>
         <ul class="dropdown">
-          <li data-rel="1" class="active">Blood Sugar</li>
-          <li data-rel="2">Blood Pressure</li>
-          <li data-rel="3">Weight</li>
+          <li data-rel="1" class="active">Verensokeri</li>
+          <li data-rel="2">Verenpaine</li>
+          <li data-rel="3">Painon hallinta</li>
         </ul>
       </li>
     </ul>
@@ -73,32 +73,32 @@
       <div class="row">
 
         <div class="mainleft">
-          <h2>Blood Sugar</h2>
-          <h5>Please enter and add your information</h5>
+          <h2>Verensokeri</h2>
+          <h5>Kirjaa ja lisää arvot</h5>
 
           <form class="formbloodsugar" id="sugar" name= "sugar">
 
             <div class="container">
-              <label for="bloodsugar"><b>Blood Sugar</b></label>
+              <label for="bloodsugar"><b>Verensokeri</b></label>
               <input id="bloodsugar" type="text" placeholder="0.0 (mmol/L)" name="bloodsugar" required>
 
-              <label for="bloodsugar"><b>Date</b></label>
+              <label for="bloodsugar"><b>Pvm</b></label>
               <input type="date" placeholder="YYYY-MM-DD" value="<? echo date("Y-m-d")?>" name="date" required>
 
-              <label for="bloodsugar"><b>Time</b></label>
+              <label for="bloodsugar"><b>Aika</b></label>
               <input type="time" placeholder="HH:MM" value="<? echo date("H:i")?>" name="time" required>
 
               <p id="bsresult" style="font-size: 16px; color:red"></p>
 
               <input type="hidden" name="bsoffset" value="0" id="bsoffset">
 
-              <button class="addbutton">Add</button>
+              <button class="addbutton">Lisää</button>
 
             </div>
 
           </form>
 
-          <button onclick="bsdelval()" type="latest" class="latest">Delete latest value</button>
+          <button onclick="bsdelval()" type="latest" class="latest">Poista viimeisin arvo</button>
           <p id="yay" style="font-size: 16px"></p>
         </div>
 
@@ -243,35 +243,35 @@
       <div class="row">
 
         <div class="mainleft">
-          <h2>Blood Pressure</h2>
-          <h5>Please enter and add your information</h5>
+          <h2>Verenpaine</h2>
+          <h5>Kirjaa ja lisää arvot</h5>
 
           <form id="pressure" name="pressure" class="formbloodsugar">
 
             <div class="container">
-              <label for="bloodsugar"><b>Systolic</b></label>
+              <label for="bloodsugar"><b>Yläpaine</b></label>
               <input type="text" placeholder="0.0 (mmHg)" name="systolic" required>
 
-              <label for="bloodsugar"><b>Diastolic</b></label>
+              <label for="bloodsugar"><b>Alapaine</b></label>
               <input type="text" placeholder="0.0 (mmHg)" name="diastolic" required>
 
-              <label for="bloodsugar"><b>Date</b></label>
+              <label for="bloodsugar"><b>Pvm</b></label>
               <input type="date" placeholder="YYYY-MM-DD" value="<? echo date("Y-m-d")?>" name="date" required>
 
-              <label for="bloodsugar"><b>Time</b></label>
+              <label for="bloodsugar"><b>Aika</b></label>
               <input type="time" placeholder="HH:MM" value="<? echo date("H:i")?>" name="time" required>
 
               <p id="bpresult" style="font-size: 16px; color:red"></p>
 
               <input type="hidden" name="bpoffset" value="0" id="bpoffset">
 
-              <button class="addbutton">Add</button>
+              <button class="addbutton">Lisää</button>
 
             </div>
 
           </form>
 
-          <button onclick="bpdelval()" type="latest" class="latest">Delete latest value</button>
+          <button onclick="bpdelval()" type="latest" class="latest">Poista viimeisin arvo</button>
           <p id="bpyay" style="font-size: 16px"></p>
 
         </div>
@@ -416,32 +416,32 @@
       <div class="row">
 
         <div class="mainleft">
-          <h2>Weight Tracker</h2>
-          <h5>Please enter and add your information</h5>
+          <h2>Paino</h2>
+          <h5>Kirjaa ja lisää arvot</h5>
 
           <form class="formbloodsugar" id="weight" name="weight">
 
             <div class="container">
-              <label for="bloodsugar"><b>Weight</b></label>
+              <label for="bloodsugar"><b>Paino</b></label>
               <input id="bloodsugar" type="text" placeholder="0.0 (Kilograms)" name="weight" required>
 
-              <label for="bloodsugar"><b>Date</b></label>
+              <label for="bloodsugar"><b>Pvm</b></label>
               <input type="date" placeholder="YYYY-MM-DD" value="<? echo date("Y-m-d")?>" name="date" required>
 
-              <label for="bloodsugar"><b>Time</b></label>
+              <label for="bloodsugar"><b>Aika</b></label>
               <input type="time" placeholder="HH:MM" value="<? echo date("H:i")?>" name="time" required>
 
               <p id="weresult" style="font-size: 16px; color:red"></p>
 
               <input type="hidden" name="weoffset" value="0" id="weoffset">
 
-              <button class="addbutton">Add</button>
+              <button class="addbutton">Lisää</button>
 
             </div>
 
           </form>
 
-          <button onclick="wedelval()" type="latest" class="latest">Delete latest value</button>
+          <button onclick="wedelval()" type="latest" class="latest">Poista viimeisin arvo</button>
           <p id="weyay" style="font-size: 16px"></p>
 
         </div>
@@ -614,9 +614,8 @@
     <div class="footer-right">
 
       <p class="footer-company-about">
-        <span>About the company</span>
-        Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
-        vehicula sit amet.
+        <span>Tietoa sivusta</span>
+        Tämä sivu on tehty osana Metropolian Ammattikorkeakoulun kurssiprojektia.
       </p>
 
       <div class="footer-icons">

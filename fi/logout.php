@@ -15,6 +15,6 @@
 
     session_destroy();
 
-    header("location: landingFin.php")
+    header("location: landing.php")
 
 ?>

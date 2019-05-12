@@ -15,7 +15,7 @@
       die( "Database connection failed :(" );
   }
 
-  if(!($stmt = $connection->prepare("DELETE FROM Measure WHERE Id = (?) AND Type = 1 ORDER BY Idm DESC LIMIT 1"))){
+  if(!($stmt = $connection->prepare("DELETE FROM Measure WHERE Id = (?) AND Type = 3 ORDER BY Idm DESC LIMIT 1"))){
       echo "Prepare Failed: (" . $mysqli->errno . ") " . $mysqli->error;
   }
   $id = intval(htmlentities($_SESSION["id"]));

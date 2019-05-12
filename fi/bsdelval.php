@@ -25,5 +25,5 @@
   if (!$stmt->execute()) {
     echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
   }
-  echo "Tieto poistettu onnistuneesti";
+  echo "Data deleted succesfully.";
 ?>

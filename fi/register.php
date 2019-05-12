@@ -4,13 +4,13 @@
     $pass2 = htmlentities($_POST["psw2"]);
 
     if(empty($email) || empty($pass1)){
-        echo "Täytä kaikki kentät!";
+        echo "Täytä Koko lomake";
     }
     elseif($pass1 != $pass2){
         echo "Salasanat eivät täsmää";
     }
     elseif(preg_match("/[A-Z]/", $pass1)===0 || preg_match("/[0-9]/", $pass1)===0 || strlen($pass1) < 4 || strlen($pass) > 30){
-        echo "Salasanassa pitää olla vähintään yksi iso kirjain, yksi pieni kirjain ja yksi numero ja sen täytyy olla 4-30 merkkiä pitkä.";
+        echo "Salasanassa täytyy olla pieni kirjain, iso kirjain ja numero ja sen täytyy olla 4-30 merkkiä pitkä.";
     }
     else{
         $config = parse_ini_file("../../../env.ini");
@@ -37,7 +37,7 @@
         }
         $res = $res->fetch_all();
         if($res[0][1] == $email){
-            echo "Sähköposti on jo käytössä";
+            echo "Sähköposti on jo rekisteröity";
         }
         else{
 

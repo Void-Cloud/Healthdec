@@ -1,29 +1,36 @@
 <?php
     session_start();
 
-    $value = htmlentities($_POST["bloodsugar"]);
+    $value1 = htmlentities(strval($_POST["systolic"]));
+    $value2 = htmlentities(strval($_POST["diastolic"]));
     $date = htmlentities($_POST["date"]);
     $time = htmlentities($_POST["time"]);
 
     $year = substr($date, -10, 4);
     $day = substr($date, -2, 2);
     $month = substr($date, -5, 2);
-    if(empty($value) || empty($date) || empty($time)){
-        echo "Täytä Koko lomake";
+    if(empty($value1) || empty($date) || empty($time || empty($value2))){
+        echo "please fill the form entirely";
     }
     elseif(!(checkdate($month, $day, $year))){
-        echo "Annettu päivä on väärin tai väärässä muodossa (yyyy-mm-dd)";
+        echo "Given date is not valid or was given in incorrect form (yyyy-mm-dd)";
     }
     elseif((preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][0-9]$/", $time)) === 0){
-        echo "Annettu aika on väärin tai väärässä muodossa (hh:mm)";
+        echo "Given time is not valid or was given in incorrect form (hh:mm)";
     }
-    elseif((preg_match("/^([0-9][0-9]|[0-9]).[0-9]$/", $value) === 0)){
-        echo "annettu arvo ei ole odotetun 00.0 - 99.9 välissä tai formaatissa";
+    elseif((preg_match("/^([0-9][0-9][0-9]|[0-9][0-9])$/", $value1) === 0)){
+        echo "Given systolic value is not within accepted range 0 - 999";
+    }
+    elseif((preg_match("/^([0-9][0-9][0-9]|[0-9][0-9])$/", $value2) === 0)){
+        echo "Given diastolic value is not within accepted range 0 - 999";
     }
     elseif(strtotime($date . $time) > strtotime('+45 minutes')){
-        echo "Et voi asettaa arvoa enempää kuin 45 minuuttia tulevaisuuteen.";
+        echo "you can't set values to further than 45 minutes in to the future.";
     }
     else{
+
+        $fvalue = $value1 . "/" . $value2;
+
         $config = parse_ini_file("../../../env.ini");
 
         $connection = mysqli_connect($config["dbaddr"], $config["username"], $config["password"], $config["dbname"]);
@@ -36,9 +43,9 @@
             echo "Prepare Failed: (" . $mysqli->errno . ") " . $mysqli->error;
         }
         $id = intval(htmlentities($_SESSION["id"]));
-        $type = 1;
+        $type = 2;
         $yay = NULL;
-        if (!$stmt->bind_param("isssii", $yay, $date, $time, $value, $type, $id)){
+        if (!$stmt->bind_param("isssii", $yay, $date, $time, $fvalue, $type, $id)){
             echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
         }
 
@@ -50,7 +57,7 @@
             echo "Getting result set failed: (" . $stmt->errno . ") " . $stmt->error;
         }
         $res = $res->fetch_all();*/
-        echo "Tieto syötetty onnistuneesti!";
+        echo "data entered succesfully!";
 
 
         $stmt->close();

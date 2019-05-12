@@ -15,7 +15,7 @@
       die( "Database connection failed :(" );
   }
 
-  if(!($stmt = $connection->prepare("DELETE FROM Measure WHERE Id = (?) AND Type = 1 ORDER BY Idm DESC LIMIT 1"))){
+  if(!($stmt = $connection->prepare("DELETE FROM Measure WHERE Id = (?) AND Type = 2 ORDER BY Idm DESC LIMIT 1"))){
       echo "Prepare Failed: (" . $mysqli->errno . ") " . $mysqli->error;
   }
   $id = intval(htmlentities($_SESSION["id"]));
@@ -25,5 +25,5 @@
   if (!$stmt->execute()) {
     echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
   }
-  echo "Tieto poistettu onnistuneesti.";
+  echo "Data deleted succesfully.";
 ?>

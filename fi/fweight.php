@@ -9,7 +9,7 @@
         die( "Database connection failed :(" );
     }
 
-    if(!($stmt = $connection->prepare("SELECT * from Measure WHERE Type = 1 AND Id = (?) ORDER BY date DESC, time DESC"))){
+    if(!($stmt = $connection->prepare("SELECT * from Measure WHERE Type = 3 AND Id = (?) ORDER BY date DESC, time DESC"))){
         echo "Prepare Failed: (" . $mysqli->errno . ") " . $mysqli->error;
     }
     if (!$stmt->bind_param("i", $_SESSION['id'])){
@@ -26,51 +26,51 @@
     $res = $res->fetch_all();
 
     if(count($res) <= 15){
-        $_SESSION['bsoffset'] = 0;
+        $_SESSION['weoffset'] = 0;
         $rows = count($res);
     }
     else{
         $rows = 15;
-        switch($_POST['bsoffset']){
+        switch($_POST['weoffset']){
             case 0:
-                $_SESSION['bsoffset'] = 0;
+                $_SESSION['weoffset'] = 0;
                 break;
             case 1: 
-                if($_SESSION['bsoffset'] + 15 > count($res) - 15 ){
-                    $_SESSION['bsoffset'] = count($res) - 15;
+                if($_SESSION['weoffset'] + 15 > count($res) - 15 ){
+                    $_SESSION['weoffset'] = count($res) - 15;
                 }
                 else{
-                    $_SESSION['bsoffset'] = $_SESSION['bsoffset'] + 15;
+                    $_SESSION['weoffset'] = $_SESSION['weoffset'] + 15;
                 }
                 break;
             case 2:
-                if($_SESSION['bsoffset'] - 15 < 0){
-                    $_SESSION['bsoffset'] = 0;
+                if($_SESSION['weoffset'] - 15 < 0){
+                    $_SESSION['weoffset'] = 0;
                 }
                 else{
-                    $_SESSION['bsoffset'] = $_SESSION['bsoffset'] - 15;
+                    $_SESSION['weoffset'] = $_SESSION['weoffset'] - 15;
                 }
                 break;
             default:
-                $_SESSION['bsoffset'] = 0;
+                $_SESSION['weoffset'] = 0;
                 
         }
     }
 ?>
 
-var chart = new CanvasJS.Chart("bsvc", {
+var chart = new CanvasJS.Chart("wevc", {
 	animationEnabled: true,
 	title:{
-		text: "Veren Sokeri"
+		text: "Paino"
 	},
 	axisX: {
         labelMaxWidth: "75",
-		title: "Päiväys"
+		title: "Date"
 	},
 	axisY: {
 		title: "",
 		includeZero: false,
-		suffix: "  mmol/L"
+		suffix: "  Kiloa"
 	},
 	legend:{
 		cursor: "pointer",
@@ -81,13 +81,13 @@ var chart = new CanvasJS.Chart("bsvc", {
 		shared: true
 	},
 	data: [{
-        name: "Veren sokeri",
+        name: "Paino",
 		type: "spline",
-		yValueFormatString: "0.0 mmol/L",
+		yValueFormatString: "0.0 Kg",
 		showInLegend: true,
         dataPoints: [
 <?
-			for($i = $rows + $_SESSION['bsoffset'] -1; $i >= $_SESSION['bsoffset']; $i--){
+			for($i = $rows + $_SESSION['weoffset'] -1; $i >= $_SESSION['weoffset']; $i--){
                 $day = substr($res[$i][1], -2, 2);
                 $month = substr($res[$i][1], -5, 2);
                 $year = substr($res[$i][1], -10, 4);
