@@ -31,7 +31,7 @@
 
   <div class="uppersection">
     <div class="upperbar">
-      <img src="logosmall.png" alt="Healtdec" class="logo">
+      <img src="Logosmall.png" alt="Healtdec" class="logo">
       <button id="logoutbutton"><i class="fa fa-sign-out"
           style="font-size:24px;  padding-right:2px; "></i>Logout</button>
 
@@ -46,7 +46,7 @@
 
   </div>
 
-  <nav role="navigation">
+  <nav>
     <ul>
       <li><a href="#">Choose a form</a>
         <ul class="dropdown">
@@ -70,7 +70,7 @@
 
             <div class="container">
               <label for="bloodsugar"><b>Blood Sugar</b></label>
-              <input type="text" placeholder="0.0 (mmol/L)" name="bloodsugar" required>
+              <input id="bloodsugar" type="text" placeholder="0.0 (mmol/L)" name="bloodsugar" required>
 
               <label for="bloodsugar"><b>Date</b></label>
               <input type="date" placeholder="YYYY-MM-DD" value="<? echo date("Y-m-d")?>" name="date" required>
@@ -78,22 +78,23 @@
               <label for="bloodsugar"><b>Time</b></label>
               <input type="time" placeholder="HH:MM" value="<? echo date("H:i")?>" name="time" required>
 
-              <p id="result" style="font-size: 16px; color:red"></p>
+              <p id="bsresult" style="font-size: 16px; color:red"></p>
 
               <input type="hidden" name="bsoffset" value="0" id="bsoffset">
 
-              <button type="submit">Add</button>
+              <button class="addbutton">Add</button>
+              <button onclick="bsdelval()" type="latest" class="latest">Delete latest value</button>
+
+              <p id="yay" style="font-size: 16px"></p>
 
             </div>
 
           </form>
-          <button onclick="bsdelval()" type="latest">Delete latest value</button>
-          <p id="yay" style="font-size: 16px"></p>
         </div>
 
         <script>
         
-        function increaseoffset(){
+        function bsincreaseoffset(){
 
             document.getElementById("bsoffset").value = 1;
 
@@ -105,12 +106,22 @@
                 }).then(function (response) {
                     return response.text();
                 }).then(function (text) {
-                    document.getElementById("bsv").innerHTML = (text);
+                    eval(text);
+                }).catch(function (error) {
+                    console.error(error);
+                })
+            fetch('fsugarspread.php', {
+                method: 'post',
+                body: formData
+                }).then(function (response) {
+                    return response.text();
+                }).then(function (text) {
+                    document.getElementById("bsvs").innerHTML = (text);
                 }).catch(function (error) {
                     console.error(error);
                 })
         }
-        function decreaseoffset(){
+        function bsdecreaseoffset(){
 
             document.getElementById("bsoffset").value = 2;
 
@@ -122,12 +133,22 @@
                 }).then(function (response) {
                     return response.text();
                 }).then(function (text) {
-                    document.getElementById("bsv").innerHTML = (text);
+                    eval(text);
+                }).catch(function (error) {
+                    console.error(error);
+                })
+            fetch('fsugarspread.php', {
+                method: 'post',
+                body: formData
+                }).then(function (response) {
+                    return response.text();
+                }).then(function (text) {
+                    document.getElementById("bsvs").innerHTML = (text);
                 }).catch(function (error) {
                     console.error(error);
                 })
         }
-        function fetchnewest(){
+        function fetchnewestbs(){
 
             document.getElementById("bsoffset").value = 0;
 
@@ -139,7 +160,18 @@
                 }).then(function (response) {
                     return response.text();
                 }).then(function (text) {
-                    document.getElementById("bsv").innerHTML = (text);
+                    eval(text);
+                }).catch(function (error) {
+                    console.error(error);
+                })
+
+            fetch('fsugarspread.php', {
+                method: 'post',
+                body: formData
+                }).then(function (response) {
+                    return response.text();
+                }).then(function (text) {
+                    document.getElementById("bsvs").innerHTML = (text);
                 }).catch(function (error) {
                     console.error(error);
                 })
@@ -153,12 +185,11 @@
                 return response.text();
             }).then(function (text) {
                 document.getElementById("yay").innerHTML = (text);
-                fetchnewest();
+                fetchnewestbs();
             }).catch(function (error) {
                 console.error(error);
             })
         }
-        
 
         const sugar = document.getElementById('sugar');
 
@@ -174,22 +205,24 @@
                 }).then(function (response) {
                     return response.text();
                 }).then(function (text) {
-                    document.getElementById("result").innerHTML = (text);
+                    document.getElementById("bsresult").innerHTML = (text);
+                    fetchnewestbs();
                 }).catch(function (error) {
                     console.error(error);
                 })
 
-            fetchnewest();
         });
-        fetchnewest();
+        fetchnewestbs();
 
 
         </script>
 
         <div class="mainright">
-          <div class="fakeimg" id="bsv">Kaava1</div>
-          <button onclick="increaseoffset()" type="direction">⇦</button>
-          <button onclick="decreaseoffset()" type="direction">⇨</button>
+          <div id="bsvc" class="fakeimg">Kaava1</div>
+          <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+          <button onclick="bsdecreaseoffset()" class="direction">⇨</button>
+          <button onclick="bsincreaseoffset()" class="direction">⇦</button>
+          <div id="bsvs" class="fakeimg">Kaava1</div>
         </div>
       </div>
     </article>
@@ -218,8 +251,8 @@
               <label for="bloodsugar"><b>Time</b></label>
               <input type="text" placeholder="HH:MM" name="Time" required>
 
-              <button type="addbutton">Add</button>
-              <button type="latest">Delete latest value</button>
+              <button class="addbutton">Add</button>
+              <button class="latest">Delete latest value</button>
 
             </div>
 
@@ -228,8 +261,8 @@
 
         <div class="mainright">
           <div class="fakeimg">Kaava2</div>
-          <button type="direction">⇦</button>
-          <button type="direction">⇨</button>
+          <button class="direction">⇦</button>
+          <button class="direction">⇨</button>
         </div>
       </div>
     </article>
@@ -245,28 +278,161 @@
 
           <form class="formbloodsugar">
 
+          <form class="formbloodsugar" id="sugar" name= "sugar">
+
             <div class="container">
-              <label for="bloodsugar"><b>Weight</b></label>
-              <input type="text" placeholder="0.0 (kg)" name="weight" required>
+              <label for="bloodsugar"><b>Blood Sugar</b></label>
+              <input id="bloodsugar" type="text" placeholder="0.0 (mmol/L)" name="bloodsugar" required>
 
               <label for="bloodsugar"><b>Date</b></label>
-              <input type="text" placeholder="DD/MM/YYYY" name="Date" required>
+              <input type="date" placeholder="YYYY-MM-DD" value="<? echo date("Y-m-d")?>" name="date" required>
 
               <label for="bloodsugar"><b>Time</b></label>
-              <input type="text" placeholder="HH:MM" name="Time" required>
+              <input type="time" placeholder="HH:MM" value="<? echo date("H:i")?>" name="time" required>
 
-              <button type="addbutton">Add</button>
-              <button type="latest">Delete latest value</button>
+              <p id="bsresult" style="font-size: 16px; color:red"></p>
+
+              <input type="hidden" name="bsoffset" value="0" id="bsoffset">
+
+              <button class="addbutton">Add</button>
+              <button onclick="wedelval()" type="latest" class="latest">Delete latest value</button>
+
+              <p id="yay" style="font-size: 16px"></p>
 
             </div>
 
           </form>
         </div>
 
+        <script>
+        
+        function weincreaseoffset(){
+
+            document.getElementById("weoffset").value = 1;
+
+            const formData = new FormData(sugar);
+
+            fetch('fweight.php', {
+                method: 'post',
+                body: formData
+                }).then(function (response) {
+                    return response.text();
+                }).then(function (text) {
+                    eval(text);
+                }).catch(function (error) {
+                    console.error(error);
+                })
+            fetch('fweightspread.php', {
+                method: 'post',
+                body: formData
+                }).then(function (response) {
+                    return response.text();
+                }).then(function (text) {
+                    document.getElementById("bsvs").innerHTML = (text);
+                }).catch(function (error) {
+                    console.error(error);
+                })
+        }
+        function wedecreaseoffset(){
+
+            document.getElementById("bsoffset").value = 2;
+
+            const formData = new FormData(sugar);
+
+            fetch('fweight.php', {
+                method: 'post',
+                body: formData
+                }).then(function (response) {
+                    return response.text();
+                }).then(function (text) {
+                    eval(text);
+                }).catch(function (error) {
+                    console.error(error);
+                })
+            fetch('fweightspread.php', {
+                method: 'post',
+                body: formData
+                }).then(function (response) {
+                    return response.text();
+                }).then(function (text) {
+                    document.getElementById("bsvs").innerHTML = (text);
+                }).catch(function (error) {
+                    console.error(error);
+                })
+        }
+        function fetchnewestwe(){
+
+            document.getElementById("weoffset").value = 0;
+
+            const formData = new FormData(sugar);
+
+            fetch('fweight.php', {
+                method: 'post',
+                body: formData
+                }).then(function (response) {
+                    return response.text();
+                }).then(function (text) {
+                    eval(text);
+                }).catch(function (error) {
+                    console.error(error);
+                })
+
+            fetch('fweightspread.php', {
+                method: 'post',
+                body: formData
+                }).then(function (response) {
+                    return response.text();
+                }).then(function (text) {
+                    document.getElementById("bsvs").innerHTML = (text);
+                }).catch(function (error) {
+                    console.error(error);
+                })
+        }
+        function wedelval(){
+          const formData = new FormData(sugar);
+          fetch('wedelval.php', {
+            method: 'post',
+            body: formData
+            }).then(function (response) {
+                return response.text();
+            }).then(function (text) {
+                document.getElementById("yay").innerHTML = (text);
+                fetchnewestwe();
+            }).catch(function (error) {
+                console.error(error);
+            })
+        }
+
+        const weight = document.getElementById('weight');
+
+        weight.addEventListener('submit', function (e) {
+
+            e.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch('weight.php', {
+                method: 'post',
+                body: formData
+                }).then(function (response) {
+                    return response.text();
+                }).then(function (text) {
+                    document.getElementById("bsresult").innerHTML = (text);
+                    fetchnewestwe();
+                }).catch(function (error) {
+                    console.error(error);
+                })
+
+        });
+        fetchnewestwe();
+
+
+        </script>
+
         <div class="mainright">
           <div class="fakeimg">Kaava3</div>
-          <button type="direction">⇦</button>
-          <button type="direction">⇨</button>
+          <button onclick="wedecreaseoffset()" class="direction">⇨</button>
+          <button onclick="weincreaseoffset()" class="direction">⇦</button>
         </div>
       </div>
     </article>
@@ -277,7 +443,7 @@
 
     <div class="footer-left">
 
-      <img src="logo1.png" alt="Healtdec" class="logo">
+      <img src="Logo1.png" alt="Healtdec" class="logo">
 
 
       <p class="footer-company-name">Healthdec &copy; 2019</p>
@@ -333,8 +499,8 @@
   </script>
   <script>
     // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
-    
+    window.onscroll = function () { scrollFunction() };
+
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         document.getElementById("myBtn").style.display = "block";
@@ -342,13 +508,13 @@
         document.getElementById("myBtn").style.display = "none";
       }
     }
-    
+
     // When the user clicks on the button, scroll to the top of the document
     function topFunction() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     }
-    </script>
+  </script>
 
 </body>
 

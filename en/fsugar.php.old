@@ -56,62 +56,9 @@
                 
         }
     }
+    echo "<table style='width:100%'><tr><th>Date</th><th>Time</th><th>Value</th></tr>";
+    for($i = $_SESSION['bsoffset']; $i < $rows + $_SESSION['bsoffset']; $i++){
+        echo "<tr><td>". substr($res[$i][1], -2, 2). ".". substr($res[$i][1], -5, 2). ".". substr($res[$i][1], -10, 4). "</td><td>".substr($res[$i][2], -8, 2). ":".substr($res[$i][2], -5, 2)."</td><td>". $res[$i][3]. "</td></tr>";
+    }
+    echo "</table>";
 ?>
-
-var chart = new CanvasJS.Chart("bsvc", {
-	animationEnabled: true,
-	title:{
-		text: "Blood Glucose"
-	},
-	axisX: {
-        labelMaxWidth: "75",
-		title: "Date"
-	},
-	axisY: {
-		title: "",
-		includeZero: false,
-		suffix: "  mmol/L"
-	},
-	legend:{
-		cursor: "pointer",
-		fontSize: 0,
-		itemclick: toggleDataSeries
-	},
-	toolTip:{
-		shared: true
-	},
-	data: [{
-        name: "Systolic",
-		type: "spline",
-		yValueFormatString: "0.0 mmol/L",
-		showInLegend: true,
-        dataPoints: [
-<?
-			for($i = $rows + $_SESSION['bsoffset'] -1; $i >= $_SESSION['bsoffset']; $i--){
-                $day = substr($res[$i][1], -2, 2);
-                $month = substr($res[$i][1], -5, 2);
-                $year = substr($res[$i][1], -10, 4);
-                $hour = substr($res[$i][2], -8, 2);
-                $minute = substr($res[$i][2], -5, 2);
-                $value = $res[$i][3];
-                echo "{ 'label': '". $day .".". $month .".". $year ." ". $hour . ":". $minute ."', y: ". $value . " },";
-            }
-?>			
-		]
-	},
-	{
-		
-	}]
-});
-chart.render();
-
-function toggleDataSeries(e){
-	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-		e.dataSeries.visible = false;
-	}
-	else{
-		e.dataSeries.visible = true;
-	}
-	chart.render();
-}
-

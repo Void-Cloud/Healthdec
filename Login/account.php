@@ -33,7 +33,7 @@
         <input type="hidden" name="offset" value="0" id="offset">
         <button type="submit">submit</button>
     </form>
-    <button onclick="increaseoffset()">-></button><button onclick="decreaseoffset()">-></button>
+    <button onclick="increaseoffset()"><-</button><button onclick="decreaseoffset()">-></button>
     <script>
 
         function increaseoffset(){
@@ -48,7 +48,8 @@
                 }).then(function (response) {
                     return response.text();
                 }).then(function (text) {
-                    $('#chartContainer').html(text);
+                    document.getElementById("result").innerHTML = (text);
+                    eval(text);
                 }).catch(function (error) {
                     console.error(error);
                 })
@@ -65,6 +66,7 @@
                 }).then(function (response) {
                     return response.text();
                 }).then(function (text) {
+                    document.getElementById("result").innerHTML = (text);
                     eval(text);
                 }).catch(function (error) {
                     console.error(error);
@@ -82,6 +84,7 @@
                 }).then(function (response) {
                     return response.text();
                 }).then(function (text) {
+                    document.getElementById("result").innerHTML = (text);
                     eval(text);
                 }).catch(function (error) {
                     console.error(error);
@@ -105,11 +108,11 @@
                     return response.text();
                 }).then(function (text) {
                     document.getElementById("result").innerHTML = (text);
+                    fetchnewest();
                 }).catch(function (error) {
                     console.error(error);
                 })
 
-            fetchnewest();
         });
         fetchnewest();
     </script>

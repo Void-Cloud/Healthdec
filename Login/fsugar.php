@@ -9,7 +9,7 @@
         die( "Database connection failed :(" );
     }
 
-    if(!($stmt = $connection->prepare("SELECT * from Measure WHERE Type = 1 AND Id = (?) ORDER BY date DESC, time"))){
+    if(!($stmt = $connection->prepare("SELECT * from Measure WHERE Type = 1 AND Id = (?) ORDER BY date DESC, time DESC"))){
         echo "Prepare Failed: (" . $mysqli->errno . ") " . $mysqli->error;
     }
     if (!$stmt->bind_param("i", $_SESSION['id'])){
@@ -57,7 +57,6 @@
         }
     }
 ?>
-window.onload = function () {
 
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
@@ -65,7 +64,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		text: "Blood Glucose"
 	},
 	axisX: {
-		valueFormatString: "DD MMM,YY HH,mm"
+		title: "Date"
 	},
 	axisY: {
 		title: "",
@@ -83,12 +82,18 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	data: [{
 		name: "Systolic",
 		type: "spline",
-		yValueFormatString: "# mmHg",
+		yValueFormatString: "0.0 #.# mmHg",
 		showInLegend: true,
         dataPoints: [
 <?
-			for($i = $_SESSION['offset']; $i < $rows + $_SESSION['offset']; $i++){
-                echo "{ x: new Date(". substr($res[$i][1], -10, 4). ",". substr($res[$i][1], -5, 2). ",".substr($res[$i][1], -2, 2). ",".substr($res[$i][2], -8, 2). ",".substr($res[$i][2], -5, 2)."), y: ". $res[$i][3]. " },";
+			for($i = $rows + $_SESSION['offset'] -1; $i >= $_SESSION['offset']; $i--){
+                $day = substr($res[$i][1], -2, 2);
+                $month = substr($res[$i][1], -5, 2);
+                $year = substr($res[$i][1], -10, 4);
+                $hour = substr($res[$i][2], -8, 2);
+                $minute = substr($res[$i][2], -5, 2);
+                $value = $res[$i][3];
+                echo "{ 'label': '". $day .".". $month .".". $year ." ". $hour . ":". $minute ."', y: ". $value . " },";
             }
 ?>			
 		]
@@ -109,4 +114,3 @@ function toggleDataSeries(e){
 	chart.render();
 }
 
-}

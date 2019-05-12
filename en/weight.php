@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    $value = htmlentities($_POST["bloodsugar"]);
+    $value = htmlentities($_POST["weight"]);
     $date = htmlentities($_POST["date"]);
     $time = htmlentities($_POST["time"]);
 
@@ -17,8 +17,8 @@
     elseif((preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][0-9]$/", $time)) === 0){
         echo "Given time is not valid or was given in incorrect form (hh:mm)";
     }
-    elseif((preg_match("/^([0-9][0-9]|[0-9]).[0-9]$/", $value) === 0)){
-        echo "Given value is not within accepted range 00.0 - 99.9";
+    elseif((preg_match("/^([0-9][0-9][0-9]|[0-9][0-9]|[0-9]).[0-9]$/", $value) === 0)){
+        echo "Given value is not within accepted range 000.0 - 999.9";
     }
     elseif(strtotime($date . $time) > strtotime('+45 minutes')){
         echo "you can't set values to further than 45 minutes in to the future.";
@@ -36,7 +36,7 @@
             echo "Prepare Failed: (" . $mysqli->errno . ") " . $mysqli->error;
         }
         $id = intval(htmlentities($_SESSION["id"]));
-        $type = 1;
+        $type = 3;
         $yay = NULL;
         if (!$stmt->bind_param("isssii", $yay, $date, $time, $value, $type, $id)){
             echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;

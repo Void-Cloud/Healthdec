@@ -25,6 +25,27 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 
 <title>Healthdec</title>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#237afc"
+    },
+    "button": {
+      "background": "#fff",
+      "text": "#237afc"
+    }
+  },
+  "theme": "classic",
+  "content": {
+    "message": "This website uses cookies to ensure you get the best experience on our website. By continuing you accept our cookies.",
+    "dismiss": "Continue!"
+  }
+})});
+</script>
 </head>
     <body>
 
