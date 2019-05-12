@@ -106,7 +106,7 @@ html {
   padding-bottom: 14vh;
 }
 
-/* Fake image, just for this example */
+/* The area for graph */
 .fakeimg {
   background-color: #aaa;
   width: 100%;
@@ -114,6 +114,7 @@ html {
   padding-right: 10px;
   padding-bottom: 200px;
 }  
+/* Styling for forms */
 input[type=text], input[type=password], input[type=email] {
   width: 60%;
   padding: 12px 20px;
@@ -142,7 +143,7 @@ button {
 button:hover {
   opacity: 0.8;
 }
-.direction {
+.direction { /*Buttons for moving values in the graph */
   background-color: #77A6F7;
   color: white;
   font-size: 30px;
@@ -289,6 +290,7 @@ margin: 0 ;
 float: right;
 font-size: 18px;
 }
+/* Media rules for scaling */
 @media (max-width: 880px) {
 
   .footer-distributed{

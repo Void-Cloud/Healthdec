@@ -8,9 +8,6 @@ html {
     margin: 0;
     padding:0;
   }
-  
- 
-
   #myBtn {          /* Scroll button */
     display: none;
     position: fixed;
@@ -100,6 +97,7 @@ html {
       padding-top: 16rem;
     }
 }
+/* Styling for contact form */
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
 * {
   margin: 0;
